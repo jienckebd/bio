@@ -130,6 +130,11 @@ function _bootstrap_preprocess_page(&$variables, $hook, $info) {
   $footer = array('#theme' => 'footer');
   $variables['footer'] = drupal_render($footer);
 
+  global $heading_subtitle;
+  if (empty($heading_subtitle)) {
+    $variables['heading_subtitle'] = $heading_subtitle;
+  }
+
 }
 
 function _bootstrap_preprocess_html(&$variables, $hook, $info) {
@@ -347,6 +352,9 @@ function bootstrap_preprocess_listing(&$variables) {
     $block_id = 'exposedformsnippet_listingpage_1';
     $subtitle = $listing['subtitle'];
   }
+
+  global $heading_subtitle;
+  $heading_subtitle = $subtitle;
 
   //$block = \Drupal\block\Entity\Block::load('exposedformsnippet_listingpage_1');
   //$block_content = \Drupal::entityManager()

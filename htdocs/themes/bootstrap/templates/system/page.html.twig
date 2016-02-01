@@ -72,11 +72,18 @@
     <div class="row">
 
       {# Header #}
-      {% if page.header %}
+      {% if is_front == false %}
         {% block header %}
-          <div class="col-sm-12" role="heading">
-            {{ page.header }}
-          </div>
+          <section id="page-heading">
+            <div class="container">
+              <div class="col-sm-12" role="heading">
+                {{ page.header }}
+                {% if heading_subtitle %}
+                  <div id="heading-subtitle">{{ heading_subtitle }}</div>
+                {% endif %}
+              </div>
+            </div>
+          </section>
         {% endblock %}
       {% endif %}
 

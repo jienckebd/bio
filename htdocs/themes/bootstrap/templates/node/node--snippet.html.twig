@@ -195,21 +195,16 @@
 
 {% if view_mode == 'teaser' %}
 
+  <a href="{{ url }}">
   <article{{ attributes.addClass(classes) }}>
-    <div class="twenty-four columns">
-      <div class="node-link">
-       <a href="{{ url }}">{{ label }}</a>
-      </div>
+    <div class="node-link">
+     <h3>{{ label }}</h3>
     </div>
-    <div class="sixteen columns">
-      <div class="snippet-description">
-        {{ content.body }}
-      </div>
+    <div class="snippet-description">
+      {{ content.body }}
     </div>
-    <div class="eight columns">
-      <div class="tools">
-        {{ content.field_tools }}
-      </div>
+    <div class="tools">
+      {{ content.field_tools }}
     </div>
     <div class="snippet-drupal-version">
       {{ content.field_version }}
@@ -218,6 +213,7 @@
       Created {{ created }}
     </div>
   </article>
+  </a>
 
 {% endif %}
 

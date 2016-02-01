@@ -1,0 +1,74 @@
+article.node--type-snippet {
+  position: relative;
+  &.node--view-mode-teaser {
+    @include box-shadow(0 16px 20px -20px rgba(0, 0, 0, 0.9));
+    @include border-radius(3px);
+    background: #FFFFFF;
+    min-height: 300px;
+    padding: 110px 30px 15px;
+    margin: 0px 0px 70px;
+    max-width: 80%;
+    .snippet-description, .tools {
+      color: #484848;
+      @include transition(all .25s ease 0s);
+    }
+    .snippet-drupal-version {
+      position: absolute;
+      width: 120px;
+      height: 120px;
+      background: $blue;
+      border-radius: 50%;
+      text-align: center;
+      left: 0;
+      right: 0;
+      margin: 0px auto;
+      padding-top: 80px;
+      z-index: -1;
+      color: #FFFFFF;
+      bottom: -50px;
+      font-size: 16px;
+      font-family: $heading-font-family;
+      text-transform: uppercase;
+    }
+    .tools {
+      margin-top: 15px;
+    }
+    .snippet-created {
+      color: #AAAAAA;
+      font-size: 16px;
+      text-align: center;
+      margin-top: 10px;
+    }
+    &:hover {
+      .snippet-description, .tools {
+        color: $blue;
+      }
+    }
+  }
+}
+
+/* Media Queries */
+
+/* hi-res laptops and desktops */
+@media (min-width:1281px) {
+}
+
+/* big landscape tablets, laptops, and desktops */
+@media (min-width:1025px) {
+}
+
+/* tablet, landscape iPad, lo-res laptops ands desktops */
+@media (min-width:961px) {
+}
+
+/* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */
+@media (min-width:641px) {
+}
+
+/* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */
+@media (min-width:481px) {
+}
+
+/* smartphones, iPhone, portrait 480x320 phones */
+@media (min-width:320px) {
+}

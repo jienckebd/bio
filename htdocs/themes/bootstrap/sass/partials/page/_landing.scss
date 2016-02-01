@@ -32,15 +32,15 @@ body.path-frontpage {
     clear: both;
     .cycle-slideshow {
       position: relative;
+      &:hover .cycle-slide .slide-caption {
+        @include opacity(1);
+        margin-left: 0px;
+      }
       .cycle-slide {
         width: 100%;
         height: 500px;
         background-attachment: fixed;
         background-size: cover;
-        &:hover .slide-caption {
-          @include opacity(1);
-          margin-left: 0px;
-        }
         .slide-caption {
           background: rgba(20, 20, 20, 0.7) none repeat scroll 0 0;
           color: #ffffff;
@@ -87,15 +87,8 @@ body.path-frontpage {
     clear: both;
     padding: 90px 0px 60px;
     background-color: #343434;
-    #landing-snippet-inner {
-      article {
-        @include border-radius(3px);
-        background: #FFFFFF;
-        margin: 15px;
-        padding: 30px;
-        min-height: 300px;
-      }
-    }
+    position: relative;
+    z-index: 1;
   }
 }
 
