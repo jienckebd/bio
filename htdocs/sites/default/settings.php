@@ -714,10 +714,13 @@ $settings['container_yamls'][] = __DIR__ . '/services.yml';
 # if (file_exists(__DIR__ . '/settings.local.php')) {
 #   include __DIR__ . '/settings.local.php';
 # }
+
+$password = (($_SERVER['HTTP_HOST'] == 'bio.local') || $_SERVER['HTTP_HOST'] == '192.168.1.124') ? '' : 'root';
+
 $databases['default']['default'] = array (
   'database' => 'bio',
   'username' => 'root',
-  'password' => '',
+  'password' => $password,
   'prefix' => '',
   'host' => 'localhost',
   'port' => '3306',
