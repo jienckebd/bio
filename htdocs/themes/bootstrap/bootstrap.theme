@@ -91,6 +91,36 @@ function bootstrap_preprocess(&$variables, $hook, $info) {
   }
 }
 
+/**
+ * {@inheritdoc}
+ *
+ * @see \Drupal\bootstrap\Bootstrap::getInfo()
+ */
+function bootstrap_theme() {
+  return Bootstrap::getThemeHooks();
+}
+
+/**
+ * {@inheritdoc}
+ *
+ * @see \Drupal\bootstrap\Plugin\Alter\ThemeRegistry::alter()
+ *
+ * @todo Remove once a proper replacement for the theme.registry service can be
+ * created in a bootstrap_core sub-module.
+ */
+function bootstrap_theme_registry_alter(&$data, &$context1 = NULL, &$context2 = NULL) {
+  Bootstrap::alter(__FUNCTION__, $data, $context1, $context2);
+}
+
+/**
+ * {@inheritdoc}
+ *
+ * @see \Drupal\bootstrap\Plugin\Alter\ThemeSuggestions::alter()
+ */
+function bootstrap_theme_suggestions_alter(&$data, &$context1 = NULL, &$context2 = NULL) {
+  Bootstrap::alter(__FUNCTION__, $data, $context1, $context2);
+}
+
 // Bootstrap Change
 function _bootstrap_preprocess_page(&$variables, $hook, $info) {
 
@@ -198,32 +228,133 @@ function bootstrap_preprocess_landing(&$variables) {
 
 }
 
-/**
- * {@inheritdoc}
- *
- * @see \Drupal\bootstrap\Bootstrap::getInfo()
- */
-function bootstrap_theme() {
-  return Bootstrap::getThemeHooks();
+function bootstrap_preprocess_node(&$variables) {
+  $node = $variables['elements']['#node'];
+  $variables['url'] = $node->url('canonical');
+
+  $node = $variables['node'];
+
+  if ($node->bundle() == 'project') {
+
+    $images = $node->get('field_images')->getValue();
+    $slides = array();
+
+    foreach ($images as $key => $image) {
+      $slide = array();
+      if (is_numeric($image['target_id'])) {
+        $file = file_load($image['target_id']);
+        $path = $file->getFileUri();
+        $slide['image_thumbnail'] = ImageStyle::load('widescreen_small')->buildUrl($path);
+        $slide['image_full'] = ImageStyle::load('gallery_full')->buildUrl($path);
+        $slide['title'] = $image['title'];
+        $slide['url'] = $image['alt'];
+        $slides[] = $slide;
+      }
+    }
+    $variables['slides'] = $slides;
+
+    $hero = $node->get('field_logo')->getValue();
+    $file = file_load($hero[0]['target_id']);
+    $path = $file->getFileUri();
+
+    $variables['logo'] = ImageStyle::load('medium')->buildUrl($path);
+
+    $version = $node->get('field_version')->getValue();
+    $variables['version'] = db_query("SELECT name FROM {taxonomy_term_field_data} WHERE tid = :tid", array(':tid' => $version[0]['target_id']))->fetchField();
+
+    $url = $node->get('field_url')->getValue();
+    $variables['site_url'] = $url[0]['uri'];
+    $variables['nid'] = $node->id();
+
+  }
+  elseif ($node->bundle() == 'snippet') {
+
+    $field_refs = $node->get('field_url_x')->getValue();
+    $refs = array();
+
+    foreach ($field_refs as $key => $data) {
+      $refs[] = array('uri' => $data['uri'], 'title' => $data['title'], 'key' => $key);
+    }
+
+    $variables['refs'] = $refs;
+
+    $code = $node->get('field_code')->getValue();
+    $code_parts = array();
+
+    foreach ($code as $key => $data) {
+      if (!empty($data['value'])) {
+        $summary = $data['summary'];
+        if (fnmatch('*[ref:*]*', $data['description'])) {
+          $key_from_summary = between('[ref:', ']', $data['description']);
+          $search = '[ref:' . $key_from_summary . ']';
+          $ref_num = $key_from_summary;
+          $replace = 'Ref ' . $ref_num . ': ' . $refs[$key_from_summary - 1]['title'];
+          $data['description'] = str_replace($search, $replace, $data['description']);
+        }
+        $data['key'] = $key;
+        $code_parts[] = $data;
+      }
+    }
+
+    $variables['code_parts'] = $code_parts;
+
+    $variables['created'] = format_date($node->getCreatedTime(), 'custom', 'd M Y');
+
+  }
 }
 
-/**
- * {@inheritdoc}
- *
- * @see \Drupal\bootstrap\Plugin\Alter\ThemeRegistry::alter()
- *
- * @todo Remove once a proper replacement for the theme.registry service can be
- * created in a bootstrap_core sub-module.
- */
-function bootstrap_theme_registry_alter(&$data, &$context1 = NULL, &$context2 = NULL) {
-  Bootstrap::alter(__FUNCTION__, $data, $context1, $context2);
+function bootstrap_preprocess_xml_sitemap(&$variables) {
+  $records = array();
+
+  $paths = array('landing', 'contact', 'snippet', 'project');
+
+  foreach ($paths as $path) {
+    $record = array();
+    $record['loc'] = $path;
+    $record['lastmod'] = format_date(REQUEST_TIME, NULL, 'Y-m-d');
+    $record['priority'] = '1.0';
+    $record['changefreq'] = 'monthly';
+    $records[] = $record;
+  }
+
+  $results = db_query("SELECT * FROM {node_field_data} WHERE type = :type1 OR type = :type2", array(':type1' => 'snippet', ':type2' => 'project'));
+  foreach ($results as $result) {
+
+    $alias = db_query("SELECT alias FROM {url_alias} WHERE source = :source", array(':source' => 'node/' . $result->nid))->fetchField();
+
+    $record = array();
+    $record['loc'] = !empty($alias) ? $alias : 'node/' . $result->nid;
+    $record['lastmod'] = format_date($result->changed, NULL, 'Y-m-d');
+    $record['priority'] = '1.0';
+    $record['changefreq'] = 'monthly';
+    $records[] = $record;
+  }
+
+  $variables['records'] = $records;
 }
 
-/**
- * {@inheritdoc}
- *
- * @see \Drupal\bootstrap\Plugin\Alter\ThemeSuggestions::alter()
- */
-function bootstrap_theme_suggestions_alter(&$data, &$context1 = NULL, &$context2 = NULL) {
-  Bootstrap::alter(__FUNCTION__, $data, $context1, $context2);
+function bootstrap_preprocess_listing(&$variables) {
+
+  $listing = site_listing_data($variables['type']);
+
+  if ($variables['type'] == 'project') {
+    $view_name = 'project_listing';
+    $block_id = 'exposedformproject_listingpage_1';
+    $subtitle = $listing['subtitle'];
+  }
+  elseif ($variables['type'] == 'snippet') {
+    $view_name = 'snippet_listing';
+    $block_id = 'exposedformsnippet_listingpage_1';
+    $subtitle = $listing['subtitle'];
+  }
+
+  //$block = \Drupal\block\Entity\Block::load('exposedformsnippet_listingpage_1');
+  //$block_content = \Drupal::entityManager()
+  //->getViewBuilder('block')
+  //->view($block);
+
+  $variables['subtitle'] = $subtitle;
+  $variables['view_facets'] = 'facets';
+  $variables['view_body'] = views_embed_view($view_name, 'page_1');
+
 }
