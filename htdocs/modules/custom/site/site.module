@@ -1,0 +1,181 @@
+<?php
+/**
+ * @file
+ * Module file for page_example_module.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\image\Entity\ImageStyle;
+use Drupal\core\Entity;
+use Drupal\Core\Url;
+use Symfony\Component\HttpFoundation\Request;
+use Drupal\Core\Routing\AdminContext;
+
+module_load_include('inc', 'site', 'inc/string_manipulation');
+module_load_include('inc', 'site', 'inc/common');
+module_load_include('inc', 'site', 'inc/data');
+
+/**
+ * Implements hook_theme().
+ */
+function site_theme() {
+  return array(
+    'landing' => array(
+    ),
+    'header' => array(
+    ),
+    'footer' => array(
+    ),
+    'listing' => array(
+      'variables' => array('type' => NULL)
+    ),
+    'contact' => array(
+      'variables' => array()
+    ),
+    'contact_confirm' => array(
+      'variables' => array()
+    ),
+    'xml_sitemap' => array(
+      'variables' => array()
+    ),
+  );
+}
+
+function site_form_system_site_information_settings_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_state) {
+
+  $config = \Drupal::service('config.factory')->getEditable('site.meta');
+
+  $form['meta'] = array(
+    '#type' => 'details',
+    '#title' => t('Default Meta Data'),
+    '#required' => TRUE,
+    '#open' => TRUE,
+    '#tree' => TRUE,
+  );
+
+  $form['meta']['meta_description'] = array(
+    '#type' => 'textarea',
+    '#title' => t('Default Meta Description'),
+    '#required' => TRUE,
+    '#default_value' => \Drupal::config('site.meta')->get('meta.default_description'),
+  );
+
+  $form['meta']['meta_keywords'] = array(
+    '#type' => 'textarea',
+    '#title' => t('Default Meta Keywords'),
+    '#required' => TRUE,
+    '#default_value' => \Drupal::config('site.meta')->get('meta.default_keywords'),
+  );
+
+  $form['#submit'][] = 'site_form_system_site_information_settings_submit';
+}
+
+function site_form_system_site_information_settings_submit(&$form, \Drupal\Core\Form\FormStateInterface $form_state) {
+  $values = $form_state->getValues();
+  $config = \Drupal::service('config.factory')->getEditable('site.meta');
+  $config->set('meta.default_description', $values['meta']['meta_description']);
+  $config->set('meta.default_keywords', $values['meta']['meta_keywords']);
+  $config->save();
+}
+
+/**
+ * Implements hook_page_attachments()
+ */
+function site_page_attachments_alter(array &$attachments) {
+  $args = arg();
+
+  if ($args[0] == 'node') {
+    $node = \Drupal::routeMatch()->getParameter('node');
+    if ($node) {
+      $body = $node->get('body')->getValue();
+      $description = $body[0]['summary'];
+
+      $keyword_items = array();
+
+      $item_values = $node->get('field_version')->getValue();
+      foreach ($item_values as $key => $data) {
+        $keyword_items[] = db_query("SELECT name FROM {taxonomy_term_field_data} WHERE tid = :tid", array(':tid' => $data['target_id']))->fetchField();
+      }
+
+      $item_values = $node->get('field_tools')->getValue();
+      foreach ($item_values as $key => $data) {
+        $keyword_items[] = db_query("SELECT name FROM {taxonomy_term_field_data} WHERE tid = :tid", array(':tid' => $data['target_id']))->fetchField();
+      }
+
+      $item_values = $node->get('field_additional_tools')->getValue();
+      foreach ($item_values as $key => $data) {
+        $keyword_items[] = db_query("SELECT name FROM {taxonomy_term_field_data} WHERE tid = :tid", array(':tid' => $data['target_id']))->fetchField();
+      }
+
+      $keywords = implode(', ', $keyword_items);
+    }
+  }
+  elseif ($args[0] == 'listing') {
+    $listing = site_listing_data($args[1]);
+    $description = $listing['subtitle'];
+  }
+
+  $config = \Drupal::service('config.factory')->getEditable('site.meta');
+
+  if (empty($description)) {
+    $description = \Drupal::config('site.meta')->get('meta.default_description');
+  }
+
+  if (empty($keywords)) {
+    $keywords = \Drupal::config('site.meta')->get('meta.default_keywords');
+  }
+
+  $description = array(
+    '#type' => 'html_tag',
+    '#tag' => 'meta',
+    '#attributes' => array(
+      'name' => 'description',
+      'content' => $description,
+    ),
+  );
+  $attachments['#attached']['html_head'][] = [$description, 'description'];
+
+  $keywords = array(
+    '#type' => 'html_tag',
+    '#tag' => 'meta',
+    '#attributes' => array(
+      'name' => 'keywords',
+      'content' => $keywords,
+    ),
+  );
+  $attachments['#attached']['html_head'][] = [$keywords, 'keywords'];
+
+}
+
+function site_ajax_render_alter(array &$data) {
+  foreach ($data as $key => $settings) {
+    if ($settings['command'] == 'insert') {
+      $data[$key]['effect'] = 'fade';
+    }
+  }
+}
+
+function site_breadcrumb_generate() {
+
+  $pieces = explode("/", $_SERVER['REQUEST_URI']);
+
+  $breadcrumbs = array();
+
+  $breadcrumb = array();
+  $breadcrumb['title'] = 'Home';
+  $breadcrumb['href'] = '/';
+  $breadcrumbs[] = $breadcrumb;
+
+  if ($pieces[1] == 'snippet') {
+    $breadcrumb = array();
+    $breadcrumb['href'] = '/snippet';
+    $breadcrumb['title'] = 'Snippets';
+    $breadcrumbs[] = $breadcrumb;
+  }
+  elseif ($pieces[1] == 'project') {
+    $breadcrumb['href'] = '/project';
+    $breadcrumb['title'] = 'Projects';
+    $breadcrumbs[] = $breadcrumb;
+  }
+  return $breadcrumbs;
+}

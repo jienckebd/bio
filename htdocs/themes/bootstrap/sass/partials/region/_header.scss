@@ -1,0 +1,182 @@
+header {
+  position: relative;
+  z-index: 999;
+  #header-secondary {
+    padding-top: 8px;
+    margin-bottom: -18px;
+    #header-secondary-left {
+      float: left;
+      #header-lang {
+        padding-right: 20px;
+        border-right: 1px dotted #AAAAAA;
+        img {
+          border: 1px solid #AAAAAA;
+          padding: 1px;
+          border-radius: 2px;
+        }
+      }
+    }
+    #header-secondary-right {
+      float: right;
+      #header-secondary-links {
+        @include inline-block();
+        vertical-align: 26px;
+        padding-right: 10px;
+        margin-right: 20px;
+        border-right: 1px dotted #AAAAAA;
+        a {
+          font-size: 14px;
+          padding: 6px 10px;
+          font-family: $heading-font-family;
+        }
+      }
+      #header-secondary-search {
+        width: 360px;
+        @include inline-block();
+        .input-group {
+          margin-top: -40px;
+        }
+      }
+    }
+  }
+  .header-main {
+    border-top: 1px dotted #AAAAAA;
+    #header-drupal {
+      #header-drupal-inner {
+        text-align: center;
+        border-right: 1px dotted #AAAAAA;
+        margin: 20px 0px;
+        img {
+          max-width: 70px;
+          margin-left: -30px;
+        }
+      }
+    }
+    #header-logo-inner {
+      padding-top: 15px;
+      #header-logo-name {
+        font-family: $heading-font-family;
+        font-size: 34px;
+      }
+      #header-logo-title {
+        font-size: 24px;
+        color: $blue;
+      }
+    }
+    #header-icons {
+      float: left;
+      font-size: 24px;
+      margin-right: 10px;
+      margin-top: 4px;
+      span {
+        margin: 0px 5px;
+      }
+    }
+    #header-menu-inner {
+      float: right;
+      margin-top: 35px;
+      margin-right: -30px;
+      ul li {
+        border-right: 1px dotted #AAAAAA;
+        &:last-child {
+          border-right: none;
+        }
+        a {
+          font-family: $heading-font-family;
+          font-size: 20px;
+          color: #777777;
+          padding: 10px 20px;
+          @include inline-block();
+          &:hover {
+            background: none;
+          }
+        }
+      }
+    }
+  }
+
+  #header-fixed {
+    position: fixed;
+    background: rgba(255, 255, 255, .92);
+    z-index: 99999999;
+    width: 100%;
+    margin-top: -62px;
+    height: 60px;
+    @include opacity(0);
+    @include transition(all .25s ease 0s);
+    &.scrolled {
+      margin-top: 0px;
+      @include opacity(1);
+      &.header-main #header-drupal #header-drupal-inner img {
+        margin-top: 0px;
+        @include opacity(1);
+      }
+    }
+    &.header-main {
+      #header-drupal #header-drupal-inner {
+        margin-top: 5px;
+        img {
+          @include inline-block();
+          width: 45px;
+          @include transition(all 2s ease 0s);
+          transition-delay: .5s;
+          @include opacity(0);
+        }
+      }
+      #header-logo-inner {
+        padding-top: 5px;
+        #header-logo-name {
+          font-size: 26px;
+          margin-top: 5px;
+        }
+      }
+      #header-menu-inner {
+        margin-top: 10px;
+      }
+    }
+    navigation {
+      @include opacity(0);
+      &.header-search-menu-active {
+        @include opacity(1);
+      }
+    }
+    #header-hidden-search {
+      position: absolute;
+      width: 340px;
+      right: 0;
+      top: 10px;
+      @include opacity(0);
+      @include transition(all .25s ease 0s);
+      &.header-search-menu-active {
+        @include opacity(1);
+      }
+    }
+  }
+
+}
+
+/* Media Queries */
+
+/* hi-res laptops and desktops */
+@media (min-width:1281px) {
+}
+
+/* big landscape tablets, laptops, and desktops */
+@media (min-width:1025px) {
+}
+
+/* tablet, landscape iPad, lo-res laptops ands desktops */
+@media (min-width:961px) {
+}
+
+/* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */
+@media (min-width:641px) {
+}
+
+/* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */
+@media (min-width:481px) {
+}
+
+/* smartphones, iPhone, portrait 480x320 phones */
+@media (min-width:320px) {
+}

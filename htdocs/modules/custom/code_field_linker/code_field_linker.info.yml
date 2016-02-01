@@ -1,0 +1,9 @@
+name: Code Field Linker
+type: module
+description: 'Creates a CCK field to store segments of code, and functionality to link it together.'
+core: 8.x
+package: Field types
+# version: VERSION
+# core: 8.x
+dependencies:
+  - field

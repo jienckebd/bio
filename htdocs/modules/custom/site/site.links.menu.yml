@@ -1,0 +1,6 @@
+site.landing:
+  title: Home
+  route_name: site_landing
+
+# We can't define a menu link for the page_example_arguments route, because it
+# requires path arguments.

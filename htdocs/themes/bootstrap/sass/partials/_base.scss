@@ -1,0 +1,27 @@
+// Font weights
+$light: 100;
+$regular: 400;
+$bold: 600;
+
+// Base Font
+$base-font-family: Cardo;
+$base-font-weight: $regular;
+$base-font-size: 18px;
+$base-line-height: 1.4;
+
+// Heading Font
+$heading-font-family: Montserrat;
+$heading-font-weight: $regular;
+$heading-font-size: 20px;
+$heading-line-height: 1.4;
+
+// Fixed Font
+$fixed-font-family: monospace;
+$fixed-font-size: 85%;
+$fixed-line-height: $base-line-height;
+
+// Headings
+$header-font-weight: $bold;
+
+// Colors
+$blue: #0091d5;

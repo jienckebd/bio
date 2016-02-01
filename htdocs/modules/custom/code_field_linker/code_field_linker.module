@@ -1,0 +1,36 @@
+<?php
+/**
+ * @file
+ * Module file for code_field_linker.
+ */
+
+use Drupal\Core\Routing\RouteMatchInterface;
+use Drupal\image\Entity\ImageStyle;
+use Drupal\core\Entity;
+use Drupal\Core\Url;
+
+define('CODE_FIELD_LINKER_INCLUDE', 1);
+define('CODE_FIELD_LINKER_NO_INCLUDE', 2);
+
+/*
+ * Stores language options
+ */
+function code_field_linker_language_options() {
+  return array(
+    'php' => t('PHP'),
+    'js' => t('JS'),
+    'css' => t('CSS'),
+    'html' => t('HTML'),
+    'yaml' => t('YAML'),
+  );
+}
+
+/*
+ * Stores linker include options
+ */
+function code_field_linker_include_options() {
+  return array(
+    CODE_FIELD_LINKER_INCLUDE => t('Include in Linker'),
+    CODE_FIELD_LINKER_NO_INCLUDE => t('Do not include in Linker'),
+  );
+}

@@ -1,0 +1,5 @@
+services:
+  site.config_subscriber:
+    class: Drupal\site\EventSubscriber\ConfigSubscriber
+    tags:
+      - { name: event_subscriber }

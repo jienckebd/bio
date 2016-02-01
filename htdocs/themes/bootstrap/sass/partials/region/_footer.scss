@@ -1,0 +1,75 @@
+footer {
+  #footer-name-menu {
+    padding: 30px 0;
+    #footer-name-title {
+      border-left: 1px dotted #AAAAAA;
+      #footer-name {
+        font-family: $heading-font-family;
+        font-size: 34px;
+      }
+      #footer-title {
+        font-size: 24px;
+        color: $blue;
+      }
+    }
+    #footer-menu {
+      #footer-menu-inner {
+        margin-left: -30px;
+        margin-top: 10px;
+      }
+      ul li {
+        border-right: 1px dotted #AAAAAA;
+        list-style: none;
+        margin-left: 0px;
+        display: inline-block;
+        &:last-child {
+          border-right: none;
+        }
+        a {
+          font-family: $heading-font-family;
+          font-size: 20px;
+          color: #777777;
+          padding: 10px 20px;
+          @include inline-block();
+          &:hover {
+            background: none;
+          }
+        }
+      }
+    }
+  }
+  #footer-copyright {
+    border-top: 1px dotted #AAAAAA;
+    padding: 15px;
+    font-size: 14px;
+    font-family: $heading-font-family;
+    color: #AAAAAA;
+  }
+}
+
+
+/* Media Queries */
+
+/* hi-res laptops and desktops */
+@media (min-width:1281px) {
+}
+
+/* big landscape tablets, laptops, and desktops */
+@media (min-width:1025px) {
+}
+
+/* tablet, landscape iPad, lo-res laptops ands desktops */
+@media (min-width:961px) {
+}
+
+/* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */
+@media (min-width:641px) {
+}
+
+/* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */
+@media (min-width:481px) {
+}
+
+/* smartphones, iPhone, portrait 480x320 phones */
+@media (min-width:320px) {
+}

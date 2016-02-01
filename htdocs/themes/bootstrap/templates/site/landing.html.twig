@@ -1,0 +1,76 @@
+<section id="landing-project">
+
+  <div id="landing-snippet-heading" class="section-heading">
+    <h2>
+      <span class="glyphicon glyphicon-cloud" aria-hidden="true"></span> My Projects
+    </h2>
+  </div>
+
+  <div id="landing-project-inner">
+    <div id="landing-slideshow" class="cycle-slideshow"
+      data-cycle-timeout="6000"
+      data-cycle-speed="1000"
+      data-cycle-log="false"
+      data-cycle-slides="> .cycle-slide"
+      data-cycle-swipe="true"
+      data-cycle-swipe-fx="scrollHorz"
+      data-cycle-pause-on-hover="true"
+
+    >
+    {% for slide in slides %}
+      <div class="cycle-slide" style="background-image: url({{ slide.hero }});">
+        <div class="slide-caption container">
+          <div class="slide-caption-inner">
+            <div class="slide-caption-front slide-caption-side">
+              <div class="slide-logo"><img src="{{ slide.logo }}"></div>
+              <div class="slide-caption-body">{{ slide.description }}</div>
+              <div class="slide-legal">{{ slide.legal }}</div>
+              <div class="slide-button"><a class="btn btn-default faa-parent animated-hover" href="{{ slide.path }}">Project Info <i class="fa fa-info-circle faa-pulse"></i></a><a class="btn btn-default faa-parent animated-hover" href="{{ slide.url }}" target="_blank" title="This link will open in a new window.">Go to Site <i class="fa fa-chevron-circle-right faa-pulse"></i></a></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+
+    <div class="cycle-pager"></div>
+  </div>
+</section>
+
+<section id="landing-picture-bio" class="row">
+  <div id="landing-picture-bio" class="container">
+    <div id="landing-picture" class="col-md-6">
+      <div id="landing-picture-inner">
+        <img src="/themes/bootstrap/img/me.jpg" />
+      </div>
+    </div>
+    <div id="landing-bio" class="col-md-6">
+      <div id="landing-bio-inner">
+        <div id="landing-bio-copy">
+          <p>
+            I'm a Drupal developer with experience in versions 6, 7, and 8 located in Massachusetts. I can work with both back end/functionality and front end/design, but most of my experience is in building functionality.
+          </p>
+          <p>
+            As a front end developer, I've designed with multiple responsive grid systems, Sass, jQuery, and front end frameworks. This site was designed on <a href="https://www.drupal.org/drupal-8.0">Drupal 8</a> using Bootstrap and Sass. Any design I build is fully responsive to work on any device.
+          </p>
+          <p>
+            As a back end developer, I've learned the best ways to use all of Drupal's APIs, from Entity API to Batch API, in versions 6, 7, and 8.
+          </p>
+        </div>
+        <div id="landing-bio-employee">
+          I'm currently an employee of <a href="http://beta.milespartnership.com/" target="_blank">Miles Marketing<br><img src="/themes/bootstrap/img/logo/miles.png"></a></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="landing-snippet">
+  <div id="landing-snippet-heading" class="section-heading">
+    <h2>
+      <span class="glyphicon glyphicon-object-align-bottom" aria-hidden="true"></span> Snippets
+    </h2>
+  </div>
+  <div id="landing-snippet-inner" class="container">
+    {{ view_snippet }}
+  </div>
+</section>

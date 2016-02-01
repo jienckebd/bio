@@ -1,0 +1,126 @@
+body.path-frontpage {
+
+  #landing-picture-bio {
+    background-color: $blue;
+    color: #FFFFFF;
+    padding: 50px 0px;
+    #landing-picture {
+      img {
+        @include border-radius(50%);
+        @include box-shadow(0 16px 20px -20px rgba(0, 0, 0, 0.9));
+        border: 10px solid #FFFFFF;
+        position: relative;
+        z-index: 1;
+      }
+    }
+    #landing-bio-inner {
+      @include border-radius(3px);
+      @include box-shadow(0 16px 20px -20px rgba(0, 0, 0, 0.9));
+      background: #FFFFFF;
+      padding: 40px;
+      text-align: left;
+      color: #484848;
+      margin-left: -150px;
+      #landing-bio-employee {
+        text-align: center;
+        margin-top: 10px;
+      }
+    }
+  }
+
+  #landing-project {
+    clear: both;
+    .cycle-slideshow {
+      position: relative;
+      .cycle-slide {
+        width: 100%;
+        height: 500px;
+        background-attachment: fixed;
+        background-size: cover;
+        &:hover .slide-caption {
+          @include opacity(1);
+          margin-left: 0px;
+        }
+        .slide-caption {
+          background: rgba(20, 20, 20, 0.7) none repeat scroll 0 0;
+          color: #ffffff;
+          @include opacity(0);
+          padding: 40px 60px;
+          position: absolute;
+          text-align: center;
+          @include transition(all 0.5s ease 0s);
+          width: 700px;
+          z-index: 1;
+          bottom: 0;
+          top: 0;
+          width: 400px;
+          margin-left: -400px;
+          .slide-caption-body {
+            margin: 20px auto;
+          }
+          .slide-legal {
+            color: #DDDDDD;
+            font-size: 16px;
+          }
+        }
+      }
+      .cycle-pager {
+        width: 100%;
+        text-align: right;
+        position: absolute;
+        top: 55px;
+        z-index: 999;
+        right: 30px;
+        span {
+          color: #FFFFFF;
+          font-size: 90px;
+          cursor: pointer;
+          &:hover, &.cycle-pager-active {
+            color: $blue;
+          }
+        }
+      }
+    }
+  }
+
+  #landing-snippet {
+    clear: both;
+    padding: 90px 0px 60px;
+    background-color: #343434;
+    #landing-snippet-inner {
+      article {
+        @include border-radius(3px);
+        background: #FFFFFF;
+        margin: 10px;
+        padding: 30px;
+        min-height: 300px;
+      }
+    }
+  }
+}
+
+/* Media Queries */
+
+/* hi-res laptops and desktops */
+@media (min-width:1281px) {
+}
+
+/* big landscape tablets, laptops, and desktops */
+@media (min-width:1025px) {
+}
+
+/* tablet, landscape iPad, lo-res laptops ands desktops */
+@media (min-width:961px) {
+}
+
+/* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */
+@media (min-width:641px) {
+}
+
+/* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */
+@media (min-width:481px) {
+}
+
+/* smartphones, iPhone, portrait 480x320 phones */
+@media (min-width:320px) {
+}

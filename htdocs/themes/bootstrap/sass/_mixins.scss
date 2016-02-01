@@ -1,0 +1,11 @@
+@mixin heading-font() {
+  font-family: $heading-font-family;
+  font-size: $heading-font-size;
+  line-height: $heading-line-height;
+}
+
+@mixin base-font() {
+  font-family: $base-font-family;
+  font-size: $base-font-size;
+  line-height: $base-line-height;
+}

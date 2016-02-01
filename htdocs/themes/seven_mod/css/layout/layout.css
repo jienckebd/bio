@@ -1,0 +1,13 @@
+/**
+ * Add spacing to bottom of pages
+ */
+.page-content {
+  margin-bottom: 80px;
+  display: none;
+}
+
+html body .visually-hidden {
+  width: auto !important;
+  height: auto !important;
+  position: relative !important;
+}
