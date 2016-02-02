@@ -35,6 +35,11 @@ header {
         @include inline-block();
         .input-group {
           margin-top: -40px;
+          .form-control {
+            border-top: none;
+            border-bottom: 1px dotted #AAAAAA;
+            border-left: 1px dotted #AAAAAA;
+          }
         }
       }
     }

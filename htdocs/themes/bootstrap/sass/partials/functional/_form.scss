@@ -2,6 +2,9 @@ form {
   input {
     font-family: $heading-font-family;
   }
+  .form-control {
+    height: 42px;
+  }
 }
 
 /* Media Queries */

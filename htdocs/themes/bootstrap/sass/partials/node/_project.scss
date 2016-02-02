@@ -1,3 +1,74 @@
+article.node--type-project {
+  position: relative;
+  &.node--view-mode-teaser {
+    @include box-shadow(0 16px 28px -20px rgba(0, 0, 0, 0.9));
+    @include border-radius(3px);
+    @include transition(all .25s ease 0s);
+    background: #FFFFFF;
+    min-height: 300px;
+    padding: 110px 30px 15px;
+    margin: 0px 0px 70px;
+    max-width: 80%;
+    border: 1px solid #FFFFFF;
+    .snippet-description, .tools {
+      color: #484848;
+      @include transition(all .25s ease 0s);
+    }
+    .version {
+      position: absolute;
+      width: 120px;
+      height: 120px;
+      background: $blue;
+      border-radius: 50%;
+      text-align: center;
+      left: 0;
+      right: 0;
+      margin: 0px auto;
+      padding-top: 80px;
+      z-index: -1;
+      color: #FFFFFF;
+      bottom: -50px;
+      font-size: 16px;
+      font-family: $heading-font-family;
+      text-transform: uppercase;
+    }
+    .tools {
+      margin-top: 15px;
+    }
+    .snippet-created {
+      color: #AAAAAA;
+      font-size: 16px;
+      text-align: center;
+      margin-top: 10px;
+    }
+    &:hover {
+      border-color: $blue;
+      .snippet-description, .tools {
+        color: $blue;
+      }
+    }
+    .cycle-slide {
+      width: 100%;
+      height: 200px;
+    }
+    .cycle-pager {
+      position: absolute;
+      right: 0;
+      bottom: -80px;
+      text-align: right;
+      span {
+        font-size: 60px;
+        transition: all .25s ease 0s;
+        cursor: pointer;
+        margin: 4px;
+        &:hover {
+          color: #FF0000;
+        }
+      }
+    }
+  }
+}
+
 /* Media Queries */
 
 /* hi-res laptops and desktops */

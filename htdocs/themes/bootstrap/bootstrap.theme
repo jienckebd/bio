@@ -356,13 +356,13 @@ function bootstrap_preprocess_listing(&$variables) {
   global $heading_subtitle;
   $heading_subtitle = $subtitle;
 
-  //$block = \Drupal\block\Entity\Block::load('exposedformsnippet_listingpage_1');
-  //$block_content = \Drupal::entityManager()
-  //->getViewBuilder('block')
-  //->view($block);
+  $block = \Drupal\block\Entity\Block::load('exposedformsnippet_listingpage_1');
+  $block_content = \Drupal::entityManager()
+  ->getViewBuilder('block')
+  ->view($block);
 
   $variables['subtitle'] = $subtitle;
-  $variables['view_facets'] = 'facets';
+  $variables['view_facets'] = drupal_render($block_content);
   $variables['view_body'] = views_embed_view($view_name, 'page_1');
 
 }
