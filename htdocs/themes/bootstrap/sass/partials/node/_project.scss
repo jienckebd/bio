@@ -6,13 +6,14 @@ article.node--type-project {
     @include transition(all .25s ease 0s);
     background: #FFFFFF;
     min-height: 300px;
-    padding: 110px 30px 15px;
+    padding: 85px 30px 15px;
     margin: 0px 0px 70px;
-    max-width: 80%;
     border: 1px solid #FFFFFF;
-    .snippet-description, .tools {
-      color: #484848;
-      @include transition(all .25s ease 0s);
+    .project-left {
+      text-align: center;
+    }
+    .logo-buttons {
+      margin: 20px 0px;
     }
     .version {
       position: absolute;
@@ -32,14 +33,8 @@ article.node--type-project {
       font-family: $heading-font-family;
       text-transform: uppercase;
     }
-    .tools {
-      margin-top: 15px;
-    }
-    .snippet-created {
-      color: #AAAAAA;
-      font-size: 16px;
-      text-align: center;
-      margin-top: 10px;
+    .project-description {
+      margin: 20px 0px;
     }
     &:hover {
       border-color: $blue;
@@ -50,19 +45,20 @@ article.node--type-project {
     .cycle-slide {
       width: 100%;
       height: 200px;
+      padding: 1px;
     }
     .cycle-pager {
       position: absolute;
-      right: 0;
-      bottom: -80px;
+      left: 10px;
+      bottom: -25px;
       text-align: right;
+      z-index: 995;
       span {
         font-size: 60px;
         transition: all .25s ease 0s;
         cursor: pointer;
-        margin: 4px;
         &:hover {
-          color: #FF0000;
+          color: $blue;
         }
       }
     }

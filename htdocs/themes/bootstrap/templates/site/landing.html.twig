@@ -2,7 +2,7 @@
 
   <div id="landing-snippet-heading" class="section-heading">
     <h2>
-      <span class="glyphicon glyphicon-cloud" aria-hidden="true"></span> My Projects
+      <span class="glyphicon glyphicon-road" aria-hidden="true"></span> My Projects
     </h2>
   </div>
 
@@ -25,7 +25,10 @@
               <div class="slide-logo"><img src="{{ slide.logo }}"></div>
               <div class="slide-caption-body">{{ slide.description }}</div>
               <div class="slide-legal">{{ slide.legal }}</div>
-              <div class="slide-button"><a class="btn btn-default faa-parent animated-hover" href="{{ slide.path }}">Project Info <i class="fa fa-info-circle faa-pulse"></i></a><a class="btn btn-default faa-parent animated-hover" href="{{ slide.url }}" target="_blank" title="This link will open in a new window.">Go to Site <i class="fa fa-chevron-circle-right faa-pulse"></i></a></div>
+              <div class="slide-buttons btn-group" aria-label="test">
+                <a class="btn btn-default faa-parent animated-hover" href="{{ slide.path }}">Project Info <i class="fa fa-info-circle faa-pulse"></i></a>
+                <a class="btn btn-default faa-parent animated-hover" href="{{ slide.url }}" target="_blank" title="This link will open in a new window.">Go to Site <i class="fa fa-chevron-circle-right faa-pulse"></i></a>
+              </div>
             </div>
           </div>
         </div>

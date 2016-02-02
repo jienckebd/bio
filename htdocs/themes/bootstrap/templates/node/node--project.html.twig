@@ -144,45 +144,47 @@
 
   <article{{ attributes.addClass(classes) }}>
     <div class="version">{{ version }}</div>
-    <div class="twelve columns project-left">
+    <div class="row">
       <div class="node-link">
-       <h3><a href="{{ url }}">{{ label }}</a></h3>
-      </div>
-      <div class="project-description">
-        {{ content.body }}
-      </div>
-      <div class="logo-bar">
-        <div class="logo">
-        <img src="{{ logo }}">
-        </div>
-        <div class="buttons">
-          <a class="btn" href="{{ url }}">Project Info</a>
-          <a class="btn" href="{{ site_url }}" target="_blank" title="This link will open in a new window.">View Site</a>
-        </div>
+        <h3><a href="{{ url }}">{{ label }}</a></h3>
       </div>
     </div>
-    <div class="twelve columns project-right">
-      <div class="project-slideshow">
-        <div class="cycle-slideshow"
-      data-cycle-timeout="6000"
-      data-cycle-log="false"
-      data-cycle-slides="> .cycle-slide"
-      data-cycle-swipe="true"
-      data-cycle-swipe-fx="scrollHorz"
-      data-cycle-pause-on-hover="true"
-
-    >
-        {% for slide in slides %}
-        <div class="cycle-slide" style="background-image: url({{ slide.image_thumbnail }});">
-          <div class="slide-caption">
-            <div class="slide-caption-title">{{ slide.title }}</div>
-          </div>
+    <div class="row">
+      <div class="col-md-6 project-left">
+        <div class="logo">
+          <img src="{{ logo }}">
         </div>
-        {% endfor %}
-        <div class="cycle-prev"><i class="fa fa-chevron-circle-left"></i></div>
-        <div class="cycle-next"><i class="fa fa-chevron-circle-right"></i></div>
-        <div class="cycle-pager"></div>
+        <div class="project-description">
+          {{ content.body }}
+        </div>
+        <div class="buttons btn-group">
+          <a class="btn btn-default" href="{{ url }}">Project Info</a>
+          <a class="btn btn-default" href="{{ site_url }}" target="_blank" title="This link will open in a new window.">View Site</a>
+        </div>
       </div>
+      <div class="col-md-6 project-right">
+        <div class="project-slideshow">
+          <div class="cycle-slideshow"
+        data-cycle-timeout="6000"
+        data-cycle-log="false"
+        data-cycle-slides="> .cycle-slide"
+        data-cycle-swipe="true"
+        data-cycle-swipe-fx="scrollHorz"
+        data-cycle-pause-on-hover="true"
+
+      >
+          {% for slide in slides %}
+          <div class="cycle-slide" style="background-image: url({{ slide.image_thumbnail }});">
+            <div class="slide-caption">
+              <div class="slide-caption-title">{{ slide.title }}</div>
+            </div>
+          </div>
+          {% endfor %}
+          <div class="cycle-prev"><i class="fa fa-chevron-circle-left"></i></div>
+          <div class="cycle-next"><i class="fa fa-chevron-circle-right"></i></div>
+          <div class="cycle-pager"></div>
+        </div>
+        </div>
       </div>
     </div>
   </article>

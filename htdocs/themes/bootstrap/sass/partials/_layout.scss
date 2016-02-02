@@ -25,6 +25,16 @@ a {
   }
 }
 
+.btn {
+  @include transition(all .25s ease 0s);
+  padding: 10px 20px;
+  font-family: Montserrat;
+  font-size: 16px;
+  &.btn-default {
+    color: #484848;
+  }
+}
+
 section {
   position: relative;
   clear: both;
@@ -34,6 +44,7 @@ section {
     right: 0;
     top: 20px;
     z-index: 995;
+    height: 56px;
     &::before {
       border-color: #0091d5 #0091d5 #0091d5 transparent;
       border-style: solid;
@@ -50,29 +61,10 @@ section {
       margin: 10px;
       font-family: $heading-font-family;
       font-size: 24px;
-      text-transform: uppercase;
       .glyphicon {
         font-size: 22px;
       }
     }
-  }
-}
-
-.section-heading {
-  position: absolute;
-  top: 0;
-  right: 0;
-  background: $blue;
-  z-index: 995;
-  &:before {
-    border-color: $blue $blue transparent;
-    border-style: solid;
-    border-width: 10px 30px;
-    bottom: -18px;
-    color: transparent;
-    content: "";
-    left: 0;
-    position: absolute;
   }
 }
 
@@ -93,10 +85,10 @@ section#page-heading {
   background: #0091d5 none repeat scroll 0 0;
   position: absolute;
   left: -1px;
-  top: 20px;
+  top: 5px;
   z-index: 2;
   height: 66px;
-  width: 90%;
+  max-width: 90%;
   &::before {
     border-color: #0091d5 transparent #0091d5 #0091d5;
     border-style: solid;
