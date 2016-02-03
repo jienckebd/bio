@@ -17,6 +17,8 @@
     Drupal.behaviors.site = {
         attach: function(context, settings) {
 
+          $('a').attr('data-toggle', 'tooltip').attr('data-placement', 'bottom');
+
             $('a.scroll-link').click(function() {
                 var jump = $(this).attr('href');
                 scrollToElement(jump, 1000, -60);

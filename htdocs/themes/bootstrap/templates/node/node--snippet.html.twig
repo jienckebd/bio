@@ -76,33 +76,33 @@
 
 {% if view_mode == 'full' %}
 
-  {{ attach_library('bio_theme/prism') }}
+{{ attach_library('bootstrap/prism') }}
 
-  <article{{ attributes.addClass(classes) }}>
+<article{{ attributes.addClass(classes) }}>
 
-    <div class="container snippet-inner">
+  <div id="snippet-inner">
 
-    <div class="snippet-top">
-      <div class="snippet-top-inner">
+    <section id="snippet-top">
+      <div id="snippet-top-inner" class="container">
 
-        <div class="twelve columns">
+        <div id="snippet-left" class="col-md-6">
 
-          <div class="snippet-box">
-            <div class="section-heading">
+          <div class="box">
+            <div class="box-heading">
               <h2>Specs</h2>
             </div>
-            <div class="snippet-spec version">
+            <div id="snippet-description"class="field">
               {{ content.field_version }}
             </div>
-            <div class="snippet-spec tools">
+            <div id="snippet-tools" class="field">
               {{ content.field_tools }}
             </div>
-            <div class="snippet-spec created field">
+            <div id="snippet-created" class="field">
               <div class="field-label">Created</div>
               {{ created }}
             </div>
 
-            <div class="snippet-parts field">
+            <div id="snippet-parts" class="field">
               <div class="field-label">Sections</div>
               <ol>
               {% for code_part in code_parts %}
@@ -115,10 +115,10 @@
 
         </div>
 
-        <div class="twelve columns">
+        <div id="snippet-right" class="col-md-6">
 
-          <div class="snippet-box">
-            <div class="section-heading">
+          <div class="box">
+            <div class="box-heading">
               <h2>Summary</h2>
             </div>
             <div class="snippet-description">
@@ -142,12 +142,15 @@
         </div>
         <div class="clearfix"></div>
       </div>
-    </div>
-    <div class="snippet-divider divider section-heading">
-      <h2>Source</h2>
-    </div>
-    <div class="snippet-code">
-      <div class="snippet-code-inner">
+    </section>
+
+    <section id="snippet-code" class="colorset-dark">
+      <div id="snippet-code-heading" class="section-heading">
+        <h2>
+          <span class="glyphicon glyphicon-object-align-bottom" aria-hidden="true"></span> Code
+        </h2>
+     </div>
+      <div id="snippet-code-inner" class="container">
 
       {% for code_part in code_parts %}
       <div class="code-part">
@@ -167,53 +170,57 @@
           </div>
         </a>
         <div id="code-wrapper-{{ code_part.key }}-code" class="code-wrapper">
-<pre class="line-numbers">
-<code class="language-{{ code_part.language }}">
-{{ code_part.value }}
-</code>
-</pre>
+          <pre class="line-numbers">
+          <code class="language-{{ code_part.language }}">
+          {{ code_part.value }}
+          </code>
+          </pre>
         </div>
       </div>
       {% endfor %}
 
       </div>
-    </div>
-    <div class="snippet-divider divider section-heading snippet-comment-divider">
-      <h2>Comments</h2>
-    </div>
-    <div class="snippet-comments">
-      <div class="snippet-comments-inner">
+    </section>
+
+
+    <section id="snippet-comments" class="colorset-blue">
+      <div id="snippet-code-heading" class="section-heading">
+        <h2>
+          <span class="glyphicon glyphicon-object-align-bottom" aria-hidden="true"></span> Comments
+        </h2>
+     </div>
+      <div id="snippet-comments-inner" class="container">
         Placeholder: I'll extend node comments with ajax and other functionality here.
       </div>
-    </div>
+    </section>
 
-    </div>
+  </div>
 
-  </article>
+</article>
 
 {% endif %}
 
 {% if view_mode == 'teaser' %}
 
-  <a href="{{ url }}">
-  <article{{ attributes.addClass(classes) }}>
-    <div class="node-link">
-     <h3>{{ label }}</h3>
-    </div>
-    <div class="snippet-description">
-      {{ content.body }}
-    </div>
-    <div class="tools">
-      {{ content.field_tools }}
-    </div>
-    <div class="snippet-drupal-version">
-      {{ content.field_version }}
-    </div>
-    <div class="snippet-created">
-      Created {{ created }}
-    </div>
-  </article>
-  </a>
+<a href="{{ url }}">
+<article{{ attributes.addClass(classes) }}>
+  <div class="node-link">
+   <h3>{{ label }}</h3>
+  </div>
+  <div class="snippet-description">
+    {{ content.body }}
+  </div>
+  <div class="tools">
+    {{ content.field_tools }}
+  </div>
+  <div class="snippet-drupal-version">
+    {{ content.field_version }}
+  </div>
+  <div class="snippet-created">
+    Created {{ created }}
+  </div>
+</article>
+</a>
 
 {% endif %}
 

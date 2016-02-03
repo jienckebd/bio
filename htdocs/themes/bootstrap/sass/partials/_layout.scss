@@ -21,6 +21,8 @@ a {
   outline: 0 !important;
   &:hover {
     color: $blue;
+  }
+  &:hover, &:active, &:focus {
     text-decoration: none;
   }
 }
@@ -35,18 +37,23 @@ a {
   }
 }
 
+.tooltip {
+  font-family: $heading-font-family;
+}
+
 section {
   position: relative;
   clear: both;
   .section-heading {
-    background: #0091d5 none repeat scroll 0 0;
+    @include transition(all .25s ease 0s);
+    background-color: $blue;
     position: absolute;
     right: 0;
     top: 20px;
     z-index: 995;
     height: 56px;
     &::before {
-      border-color: #0091d5 #0091d5 #0091d5 transparent;
+      border-color: $blue $blue $blue transparent;
       border-style: solid;
       border-width: 28px 20px 28px;
       bottom: 0;
@@ -138,6 +145,46 @@ section#page-heading {
     .form-item-keys .form-control {
       width: 264px;
     }
+  }
+}
+
+.colorset-dark {
+  background-color: #343434;
+  color: #FFFFFF;
+  a {
+    color: $orange;
+    &:hover {
+      color: #FFFFFF;
+    }
+  }
+}
+
+.colorset-blue {
+  background-color: $blue;
+  color: #FFFFFF;
+  a {
+    color: $orange;
+    &:hover {
+      color: #FFFFFF;
+    }
+  }
+  section .section-heading {
+    background-color: #FFFFFF;
+    &:before {
+      border-color: #FFFFFF;
+    }
+  }
+}
+
+.box {
+  @include box-shadow(0 16px 28px -20px rgba(0, 0, 0, 0.9));
+  padding: 20px;
+  h2 {
+    font-family: $heading-font-family;
+    padding-bottom: 5px;
+  }
+  .field {
+    margin-bottom: 20px;
   }
 }
 

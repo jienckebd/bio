@@ -78,116 +78,125 @@
 
   {{ attach_library('bio_theme/magnific') }}
 
-  <article id="node-{{ nid }}"{{ attributes.addClass(classes) }}>
-    <div class="project-inner container">
-    <div class="project-top">
-      <div class="project-top-inner">
-        <div class="twelve columns project-top-left">
-          <div class="section-heading">
+<article id="node-{{ nid }}"{{ attributes.addClass(classes) }}>
+  <div id="project-inner">
+
+  <section id="project-top">
+    <div id="project-top-inner" class="container">
+      <div id="project-top-left" class="col-md-6">
+        <div class="box">
+          <div class="box-heading" class="field">
             <h2>Specs</h2>
           </div>
-          <div class="project-logo">
+          <div id="project-logo" class="field">
             <img src="{{ logo }}">
           </div>
-          <div class="drupal-version">
+          <div id="drupal-version" class="field">
             {{ content.field_version }}
           </div>
-          <div class="tools">
+          <div id="tools">
             {{ content.field_tools }}
           </div>
         </div>
-        <div class="twelve columns project-top-right">
-          <div class="section-heading">
+      </div>
+      <div id="project-top-right" class="col-md-6">
+        <div class="box">
+          <div class="box-heading">
             <h2>Summary</h2>
           </div>
-          {{ content.body }}
-          <div class="project-link">
-            <a href="{{ site_url }}" class="btn faa-parent animated-hover" title="This link will open in a new window." target="_blank">Go to Site <i class="fa fa-chevron-circle-right faa-pulse"></i></a>
+          <div id="project-description">
+            {{ content.body }}
+          </div>
+          <div id="project-actions">
+            <a href="{{ site_url }}" class="btn btn-primary" title="This link will open in a new window." target="_blank">Go to Site <i class="fa fa-chevron-circle-right faa-pulse"></i></a>
           </div>
         </div>
-        <div class="clearfix"></div>
       </div>
     </div>
+  </section>
 
-    <div class="project-divider divider section-heading">
-      <h2>Gallery</h2>
-    </div>
 
-    <div class="project-gallery">
-      <div class="project-gallery-inner">
-        <div class="section section-gallery">
+  <section id="project-gallery">
+    <div id="project-gallery-inner" class="container">
+      <div id="project-gallery-heading" class="section-heading">
+        <h2>
+          <span class="glyphicon glyphicon-object-align-bottom" aria-hidden="true"></span> Gallery
+        </h2>
+     </div>
+      <div id="project-gallery-inner" class="container">
+        <div id="project-gallery-items">
           {% for slide in slides %}
           <a href="{{ slide.image_full }}" class="zoom grayscale-hover gallery-item-wrapper">
-            <div class="gallery-item">
+            <div class="gallery-item col-md-4">
               <div class="gallery-item-inner">
                 <img src="{{ slide.image_thumbnail }}" class="gallery-image">
-                <div class="gallery-item-link"><a href="{{ slide.url }}" target="_blank"><i class="fa fa-camera"></i> View Example</a></div>
+                <div class="gallery-item-link"><a href="{{ slide.url }}" target="_blank"><span class="glyphicon glyphicon-fullscreen" aria-hidden="true"></span> View Example</a></div>
                 <div class="gallery-item-caption">
                   <div class="gallery-item-caption-inner">
                     {{ slide.title }}
                   </div>
                 </div>
               </div>
-              <div class="gallery-item-fix-margin"></div>
             </div>
           </a>
           {% endfor %}
         </div>
       </div>
     </div>
-    </div>
-  </article>
+  </section>
+
+</article>
 
 {% endif %}
 
 {% if view_mode == 'teaser' %}
 
-  <article{{ attributes.addClass(classes) }}>
-    <div class="version">{{ version }}</div>
-    <div class="row">
-      <div class="node-link">
-        <h3><a href="{{ url }}">{{ label }}</a></h3>
+<article{{ attributes.addClass(classes) }}>
+  <div class="version">{{ version }}</div>
+  <div class="row">
+    <div class="node-link">
+      <h3><a href="{{ url }}">{{ label }}</a></h3>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-6 project-left">
+      <div class="logo">
+        <img src="{{ logo }}">
+      </div>
+      <div class="project-description">
+        {{ content.body }}
+      </div>
+      <div class="buttons btn-group">
+        <a class="btn btn-default" href="{{ url }}">Project Info</a>
+        <a class="btn btn-default" href="{{ site_url }}" target="_blank" title="This link will open in a new window.">View Site</a>
       </div>
     </div>
-    <div class="row">
-      <div class="col-md-6 project-left">
-        <div class="logo">
-          <img src="{{ logo }}">
-        </div>
-        <div class="project-description">
-          {{ content.body }}
-        </div>
-        <div class="buttons btn-group">
-          <a class="btn btn-default" href="{{ url }}">Project Info</a>
-          <a class="btn btn-default" href="{{ site_url }}" target="_blank" title="This link will open in a new window.">View Site</a>
-        </div>
-      </div>
-      <div class="col-md-6 project-right">
-        <div class="project-slideshow">
-          <div class="cycle-slideshow"
-        data-cycle-timeout="6000"
-        data-cycle-log="false"
-        data-cycle-slides="> .cycle-slide"
-        data-cycle-swipe="true"
-        data-cycle-swipe-fx="scrollHorz"
-        data-cycle-pause-on-hover="true"
+    <div class="col-md-6 project-right">
+      <div class="project-slideshow">
+        <div class="cycle-slideshow"
+      data-cycle-timeout="6000"
+      data-cycle-log="false"
+      data-cycle-slides="> .cycle-slide"
+      data-cycle-swipe="true"
+      data-cycle-swipe-fx="scrollHorz"
+      data-cycle-pause-on-hover="true"
 
-      >
-          {% for slide in slides %}
-          <div class="cycle-slide" style="background-image: url({{ slide.image_thumbnail }});">
-            <div class="slide-caption">
-              <div class="slide-caption-title">{{ slide.title }}</div>
-            </div>
+    >
+        {% for slide in slides %}
+        <div class="cycle-slide" style="background-image: url({{ slide.image_thumbnail }});">
+          <div class="slide-caption">
+            <div class="slide-caption-title">{{ slide.title }}</div>
           </div>
-          {% endfor %}
-          <div class="cycle-prev"><i class="fa fa-chevron-circle-left"></i></div>
-          <div class="cycle-next"><i class="fa fa-chevron-circle-right"></i></div>
-          <div class="cycle-pager"></div>
         </div>
-        </div>
+        {% endfor %}
+        <div class="cycle-prev"><i class="fa fa-chevron-circle-left"></i></div>
+        <div class="cycle-next"><i class="fa fa-chevron-circle-right"></i></div>
+        <div class="cycle-pager"></div>
+      </div>
       </div>
     </div>
-  </article>
+  </div>
+</article>
 
 {% endif %}
 

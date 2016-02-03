@@ -63,6 +63,40 @@ article.node--type-project {
       }
     }
   }
+  &.node--view-mode-full {
+    section {
+      padding: 20px 0px;
+    }
+    #project-gallery {
+      padding-top: 100px;
+      .gallery-item-inner {
+        margin: 5px;
+        overflow: hidden;
+        position: relative;
+        .gallery-image {
+          max-width: 100%;
+        }
+        .gallery-item-link {
+          position: absolute;
+          top: 0;
+          left: 0;
+          background-color: rgba(0, 0, 0, .6);
+          padding: 10px 30px 10px 10px;
+          span {
+            margin-right: 5px;
+          }
+          a {
+            color: #FFFFFF;
+            font-family: $heading-font-family;
+            @include inline-block();
+          }
+        }
+      }
+      &:hover .section-heading {
+        padding-right: 200px;
+      }
+    }
+  }
 }
 
 /* Media Queries */
