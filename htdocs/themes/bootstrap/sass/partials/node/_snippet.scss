@@ -65,6 +65,11 @@ article.node--type-snippet {
       &#snippet-code:hover .section-heading, &#snippet-comments:hover .section-heading {
         padding-right: 200px;
       }
+      &#snippet-code {
+        .line-numbers code {
+          margin-left: -80px;
+        }
+      }
       .snippet-spec {
         margin-bottom: 20px;
       }

@@ -715,7 +715,7 @@ $settings['container_yamls'][] = __DIR__ . '/services.yml';
 #   include __DIR__ . '/settings.local.php';
 # }
 
-$password = (($_SERVER['HTTP_HOST'] == 'bio.local') || $_SERVER['HTTP_HOST'] == '192.168.1.124') ? '' : 'root';
+$password = (($_SERVER['HTTP_HOST'] == 'bio.local') || $_SERVER['HTTP_HOST'] == 'default') ? '' : 'root';
 
 $databases['default']['default'] = array (
   'database' => 'bio',

@@ -74,27 +74,24 @@ class ContactForm extends FormBase {
     $form['left']['name'] = array(
       '#type' => 'textfield',
       '#title' => t('Name'),
-      '#title_display' => 'invisible',
       '#required' => TRUE,
-      '#attributes' => array('placeholder' => 'Your Name...'),
+      '#attributes' => array('placeholder' => 'John Smith...'),
       '#required' => TRUE,
     );
 
     $form['left']['phone'] = array(
       '#type' => 'textfield',
       '#title' => t('Phone'),
-      '#title_display' => 'invisible',
       '#required' => TRUE,
-      '#attributes' => array('placeholder' => 'Phone Number...'),
+      '#attributes' => array('placeholder' => '123-456-7890...'),
       '#required' => TRUE,
     );
 
     $form['left']['email'] = array(
       '#type' => 'textfield',
       '#title' => t('Email'),
-      '#title_display' => 'invisible',
       '#required' => TRUE,
-      '#attributes' => array('placeholder' => 'Email...'),
+      '#attributes' => array('placeholder' => 'john.smith@gmail.com...'),
       '#required' => TRUE,
     );
 
@@ -106,7 +103,7 @@ class ContactForm extends FormBase {
     );
 
     $form['left']['type'] = array(
-      '#type' => 'radios',
+      '#type' => 'select',
       '#title' => t('Type of Inquiry'),
       '#options' => $options_type,
       '#required' => FALSE,
@@ -117,6 +114,8 @@ class ContactForm extends FormBase {
       '#type' => 'textarea',
       '#title' => t('Message'),
       '#required' => TRUE,
+      '#rows' => 5,
+      '#resizable' => TRUE,
     );
 
     $form['actions'] = array(

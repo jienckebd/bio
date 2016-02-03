@@ -366,3 +366,8 @@ function bootstrap_preprocess_listing(&$variables) {
   $variables['view_body'] = views_embed_view($view_name, 'page_1');
 
 }
+
+function bootstrap_preprocess_contact(&$variables) {
+  $contact_form = \Drupal::formBuilder()->getForm('Drupal\site\Form\ContactForm');
+  $variables['form'] = drupal_render($contact_form);
+}

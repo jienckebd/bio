@@ -106,8 +106,9 @@ section .section-heading h2 .glyphicon {
 /* line 78, ../sass/partials/_layout.scss */
 section#page-heading {
   background: #343434;
+  margin-bottom: 20px;
 }
-/* line 80, ../sass/partials/_layout.scss */
+/* line 81, ../sass/partials/_layout.scss */
 section#page-heading h1 {
   padding: 20px 0px;
   border-bottom: 0px;
@@ -118,7 +119,7 @@ section#page-heading h1 {
   margin-left: -20px;
 }
 
-/* line 91, ../sass/partials/_layout.scss */
+/* line 92, ../sass/partials/_layout.scss */
 .node-link {
   background: #0091d5 none repeat scroll 0 0;
   position: absolute;
@@ -128,7 +129,7 @@ section#page-heading h1 {
   height: 66px;
   max-width: 90%;
 }
-/* line 99, ../sass/partials/_layout.scss */
+/* line 100, ../sass/partials/_layout.scss */
 .node-link::before {
   border-color: #0091d5 transparent #0091d5 #0091d5;
   border-style: solid;
@@ -139,7 +140,7 @@ section#page-heading h1 {
   right: -20px;
   position: absolute;
 }
-/* line 109, ../sass/partials/_layout.scss */
+/* line 110, ../sass/partials/_layout.scss */
 .node-link h3 {
   color: #FFFFFF;
   padding: 5px 15px 5px 10px !important;
@@ -148,97 +149,97 @@ section#page-heading h1 {
   font-size: 16px;
   text-transform: uppercase;
 }
-/* line 116, ../sass/partials/_layout.scss */
+/* line 117, ../sass/partials/_layout.scss */
 .node-link h3 .glyphicon {
   font-size: 22px;
 }
-/* line 119, ../sass/partials/_layout.scss */
+/* line 120, ../sass/partials/_layout.scss */
 .node-link h3 a {
   color: #FFFFFF;
 }
 
-/* line 125, ../sass/partials/_layout.scss */
+/* line 126, ../sass/partials/_layout.scss */
 #listing {
   margin-top: 20px;
 }
-/* line 127, ../sass/partials/_layout.scss */
+/* line 128, ../sass/partials/_layout.scss */
 #listing #listing-facets {
   border-left: 1px dotted #AAAAAA;
   border-bottom: 1px dotted #AAAAAA;
   padding: 30px 10px;
 }
-/* line 131, ../sass/partials/_layout.scss */
+/* line 132, ../sass/partials/_layout.scss */
 #listing #listing-facets label {
   display: block;
 }
-/* line 134, ../sass/partials/_layout.scss */
+/* line 135, ../sass/partials/_layout.scss */
 #listing #listing-facets .form-item {
   margin-bottom: 20px;
 }
-/* line 137, ../sass/partials/_layout.scss */
+/* line 138, ../sass/partials/_layout.scss */
 #listing #listing-facets .form-item-field-tools-target-id .form-control {
   height: 240px;
   width: 100%;
 }
-/* line 141, ../sass/partials/_layout.scss */
+/* line 142, ../sass/partials/_layout.scss */
 #listing #listing-facets .form-item-field-version-target-id .form-control {
   height: 70px;
   width: 100%;
 }
-/* line 145, ../sass/partials/_layout.scss */
+/* line 146, ../sass/partials/_layout.scss */
 #listing #listing-facets .form-item-keys .form-control {
   width: 264px;
 }
 
-/* line 151, ../sass/partials/_layout.scss */
+/* line 152, ../sass/partials/_layout.scss */
 .colorset-dark {
   background-color: #343434;
   color: #FFFFFF;
 }
-/* line 154, ../sass/partials/_layout.scss */
+/* line 155, ../sass/partials/_layout.scss */
 .colorset-dark a {
   color: #ffb400;
 }
-/* line 156, ../sass/partials/_layout.scss */
+/* line 157, ../sass/partials/_layout.scss */
 .colorset-dark a:hover {
   color: #FFFFFF;
 }
 
-/* line 162, ../sass/partials/_layout.scss */
+/* line 163, ../sass/partials/_layout.scss */
 .colorset-blue {
   background-color: #0091d5;
   color: #FFFFFF;
 }
-/* line 165, ../sass/partials/_layout.scss */
+/* line 166, ../sass/partials/_layout.scss */
 .colorset-blue a {
   color: #ffb400;
 }
-/* line 167, ../sass/partials/_layout.scss */
+/* line 168, ../sass/partials/_layout.scss */
 .colorset-blue a:hover {
   color: #FFFFFF;
 }
-/* line 171, ../sass/partials/_layout.scss */
+/* line 172, ../sass/partials/_layout.scss */
 .colorset-blue section .section-heading {
   background-color: #FFFFFF;
 }
-/* line 173, ../sass/partials/_layout.scss */
+/* line 174, ../sass/partials/_layout.scss */
 .colorset-blue section .section-heading:before {
   border-color: #FFFFFF;
 }
 
-/* line 179, ../sass/partials/_layout.scss */
+/* line 180, ../sass/partials/_layout.scss */
 .box {
-  -moz-box-shadow: 0 16px 28px -20px rgba(0, 0, 0, 0.9);
-  -webkit-box-shadow: 0 16px 28px -20px rgba(0, 0, 0, 0.9);
-  box-shadow: 0 16px 28px -20px rgba(0, 0, 0, 0.9);
+  -moz-box-shadow: 0 16px 22px -20px rgba(0, 0, 0, 0.9);
+  -webkit-box-shadow: 0 16px 22px -20px rgba(0, 0, 0, 0.9);
+  box-shadow: 0 16px 22px -20px rgba(0, 0, 0, 0.9);
   padding: 20px;
 }
-/* line 182, ../sass/partials/_layout.scss */
+/* line 183, ../sass/partials/_layout.scss */
 .box h2 {
   font-family: Montserrat;
   padding-bottom: 5px;
 }
-/* line 186, ../sass/partials/_layout.scss */
+/* line 187, ../sass/partials/_layout.scss */
 .box .field {
   margin-bottom: 20px;
 }
@@ -561,7 +562,13 @@ form input {
   font-family: Montserrat;
 }
 /* line 5, ../sass/partials/functional/_form.scss */
-form .form-control {
+form label {
+  font-family: Montserrat;
+  text-transform: uppercase;
+  font-size: 16px;
+}
+/* line 10, ../sass/partials/functional/_form.scss */
+form .form-control.form-text {
   height: 42px;
 }
 
@@ -699,6 +706,29 @@ body.path-frontpage #landing-snippet {
 /* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */
 /* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */
 /* smartphones, iPhone, portrait 480x320 phones */
+/* line 2, ../sass/partials/page/_contact.scss */
+#contact #contact-right {
+  background-color: #343434;
+  padding: 40px 20px;
+  color: #FFFFFF;
+}
+/* line 6, ../sass/partials/page/_contact.scss */
+#contact #contact-right #contact-confirm {
+  text-align: center;
+}
+/* line 8, ../sass/partials/page/_contact.scss */
+#contact #contact-right #contact-confirm #contact-confirm-top {
+  font-family: Montserrat;
+  font-size: 30px;
+}
+
+/* Media Queries */
+/* hi-res laptops and desktops */
+/* big landscape tablets, laptops, and desktops */
+/* tablet, landscape iPad, lo-res laptops ands desktops */
+/* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */
+/* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */
+/* smartphones, iPhone, portrait 480x320 phones */
 /* line 1, ../sass/partials/node/_snippet.scss */
 article.node--type-snippet {
   position: relative;
@@ -793,7 +823,11 @@ article.node--type-snippet.node--view-mode-full section#snippet-code, article.no
 article.node--type-snippet.node--view-mode-full section#snippet-code:hover .section-heading, article.node--type-snippet.node--view-mode-full section#snippet-comments:hover .section-heading {
   padding-right: 200px;
 }
-/* line 68, ../sass/partials/node/_snippet.scss */
+/* line 69, ../sass/partials/node/_snippet.scss */
+article.node--type-snippet.node--view-mode-full section#snippet-code .line-numbers code {
+  margin-left: -80px;
+}
+/* line 73, ../sass/partials/node/_snippet.scss */
 article.node--type-snippet.node--view-mode-full section .snippet-spec {
   margin-bottom: 20px;
 }
