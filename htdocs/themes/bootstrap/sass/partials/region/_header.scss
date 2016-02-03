@@ -160,6 +160,34 @@ header {
     }
   }
 
+  .header-mobile-tool {
+    @include transition(all .25s ease 0s);
+    @include opacity(0);
+    position: fixed;
+    left: 0;
+    right: 0;
+    width: 100%;
+    padding: 20px;
+    background: rgba(0, 0, 0, .8);
+    z-index: 999;
+    top: 0;
+    text-align: center;
+    margin-top: -100%;
+  }
+
+  navigation#mobile-menu li {
+    list-style: none;
+  }
+  navigation#mobile-menu li a {
+    color: #FFFFFF;
+    font-family: Montserrat;
+    font-size: 22px;
+    display: inline-block;
+    padding: 8px 60px;
+    text-transform: uppercase;
+  }
+
+
 }
 
 /* Media Queries */
