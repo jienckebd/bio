@@ -76,8 +76,6 @@
 
 {% if view_mode == 'full' %}
 
-  {{ attach_library('bio_theme/magnific') }}
-
 <article id="node-{{ nid }}"{{ attributes.addClass(classes) }}>
   <div id="project-inner">
 
@@ -126,7 +124,7 @@
       <div id="project-gallery-inner" class="container">
         <div id="project-gallery-items">
           {% for slide in slides %}
-          <a href="{{ slide.image_full }}" class="zoom grayscale-hover gallery-item-wrapper">
+          <span data-toggle="modal" data-target="#modal-image" data-image="{{ slide.image_full }}" class="bootstrap-modal-image-toggle zoom">
             <div class="gallery-item col-md-4">
               <div class="gallery-item-inner">
                 <img src="{{ slide.image_thumbnail }}" class="gallery-image">
@@ -138,7 +136,7 @@
                 </div>
               </div>
             </div>
-          </a>
+          </span>
           {% endfor %}
         </div>
       </div>

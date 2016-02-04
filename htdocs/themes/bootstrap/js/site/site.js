@@ -17,6 +17,12 @@
     Drupal.behaviors.site = {
         attach: function(context, settings) {
 
+          $('.bootstrap-modal-image-toggle').on('click', function() {
+            var image_src = $(this).attr('data-image');
+             $('#modal-image #modal-image-body img').attr('src', image_src);
+             //$('#imagemodal').modal('show'); // imagemodal is the id attribute assigned to the bootstrap modal, then i use the show function
+          });
+
           $('a').attr('data-toggle', 'tooltip').attr('data-placement', 'bottom');
 
             $('a.scroll-link').click(function() {
