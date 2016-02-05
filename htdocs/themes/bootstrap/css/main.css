@@ -275,6 +275,16 @@ section#page-heading h1 {
   margin-bottom: 20px;
 }
 
+/* line 215, ../sass/partials/_layout.scss */
+.view-content .col-md-4.views-row:nth-child(3n+1) {
+  clear: both;
+}
+
+/* line 218, ../sass/partials/_layout.scss */
+.view-content .col-md-6.views-row:nth-child(2n+1) {
+  clear: both;
+}
+
 /* Media Queries */
 /* hi-res laptops and desktops */
 /* big landscape tablets, laptops, and desktops */
@@ -351,60 +361,68 @@ header #header-secondary #header-secondary-right #header-secondary-search .input
 /* line 47, ../sass/partials/region/_header.scss */
 header .header-main {
   border-top: 1px dotted #AAAAAA;
+  position: relative;
 }
 /* line 50, ../sass/partials/region/_header.scss */
+header .header-main #header-drupal {
+  float: left;
+  padding-right: 20px;
+  margin-left: 15px;
+}
+/* line 54, ../sass/partials/region/_header.scss */
 header .header-main #header-drupal #header-drupal-inner {
   text-align: center;
   border-right: 1px dotted #AAAAAA;
   margin: 20px 0px;
+  padding-right: 15px;
 }
-/* line 54, ../sass/partials/region/_header.scss */
+/* line 59, ../sass/partials/region/_header.scss */
 header .header-main #header-drupal #header-drupal-inner img {
   max-width: 70px;
   margin-left: -30px;
 }
-/* line 60, ../sass/partials/region/_header.scss */
+/* line 65, ../sass/partials/region/_header.scss */
 header .header-main #header-logo-inner {
   padding-top: 15px;
 }
-/* line 62, ../sass/partials/region/_header.scss */
+/* line 67, ../sass/partials/region/_header.scss */
 header .header-main #header-logo-inner #header-logo-name {
   font-family: Montserrat;
   font-size: 34px;
   color: #484848;
 }
-/* line 67, ../sass/partials/region/_header.scss */
+/* line 72, ../sass/partials/region/_header.scss */
 header .header-main #header-logo-inner #header-logo-title {
   font-size: 24px;
   color: #0091d5;
 }
-/* line 72, ../sass/partials/region/_header.scss */
+/* line 77, ../sass/partials/region/_header.scss */
 header .header-main #header-icons {
   float: left;
   font-size: 24px;
   margin-right: 10px;
   margin-top: 4px;
 }
-/* line 77, ../sass/partials/region/_header.scss */
+/* line 82, ../sass/partials/region/_header.scss */
 header .header-main #header-icons span {
   margin: 0px 5px;
 }
-/* line 81, ../sass/partials/region/_header.scss */
-header .header-main #header-menu-inner {
+/* line 87, ../sass/partials/region/_header.scss */
+header .header-main #header-menu #header-menu-inner {
   float: right;
   margin-top: 35px;
   margin-right: -30px;
 }
-/* line 85, ../sass/partials/region/_header.scss */
-header .header-main #header-menu-inner ul li {
+/* line 91, ../sass/partials/region/_header.scss */
+header .header-main #header-menu #header-menu-inner ul li {
   border-right: 1px dotted #AAAAAA;
 }
-/* line 87, ../sass/partials/region/_header.scss */
-header .header-main #header-menu-inner ul li:last-child {
+/* line 93, ../sass/partials/region/_header.scss */
+header .header-main #header-menu #header-menu-inner ul li:last-child {
   border-right: none;
 }
-/* line 90, ../sass/partials/region/_header.scss */
-header .header-main #header-menu-inner ul li a {
+/* line 96, ../sass/partials/region/_header.scss */
+header .header-main #header-menu #header-menu-inner ul li a {
   -moz-transition: all 0.25s ease 0s;
   -o-transition: all 0.25s ease 0s;
   -webkit-transition: all 0.25s ease;
@@ -420,12 +438,18 @@ header .header-main #header-menu-inner ul li a {
   *zoom: 1;
   *display: inline;
 }
-/* line 97, ../sass/partials/region/_header.scss */
-header .header-main #header-menu-inner ul li a:hover {
+/* line 103, ../sass/partials/region/_header.scss */
+header .header-main #header-menu #header-menu-inner ul li a:hover {
   background-color: transparent;
   color: #0091d5;
 }
-/* line 106, ../sass/partials/region/_header.scss */
+/* line 110, ../sass/partials/region/_header.scss */
+header .header-main #header-menu.header-not-fixed {
+  position: absolute;
+  bottom: 15px;
+  right: 15px;
+}
+/* line 118, ../sass/partials/region/_header.scss */
 header #header-fixed {
   position: fixed;
   background: rgba(255, 255, 255, 0.92);
@@ -442,27 +466,27 @@ header #header-fixed {
   -webkit-transition-delay: 0s;
   transition: all 0.25s ease 0s;
 }
-/* line 116, ../sass/partials/region/_header.scss */
+/* line 128, ../sass/partials/region/_header.scss */
 header #header-fixed.scrolled {
   margin-top: 0px;
   filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false);
   opacity: 1;
 }
-/* line 119, ../sass/partials/region/_header.scss */
+/* line 131, ../sass/partials/region/_header.scss */
 header #header-fixed.scrolled.header-main #header-drupal #header-drupal-inner img {
   margin-top: 0px;
   filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false);
   opacity: 1;
 }
-/* line 124, ../sass/partials/region/_header.scss */
+/* line 136, ../sass/partials/region/_header.scss */
 header #header-fixed.header-main {
   border-top: none;
 }
-/* line 126, ../sass/partials/region/_header.scss */
+/* line 138, ../sass/partials/region/_header.scss */
 header #header-fixed.header-main #header-drupal #header-drupal-inner {
   margin-top: 3px;
 }
-/* line 128, ../sass/partials/region/_header.scss */
+/* line 140, ../sass/partials/region/_header.scss */
 header #header-fixed.header-main #header-drupal #header-drupal-inner img {
   display: inline-block;
   vertical-align: middle;
@@ -479,35 +503,35 @@ header #header-fixed.header-main #header-drupal #header-drupal-inner img {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
   opacity: 0;
 }
-/* line 136, ../sass/partials/region/_header.scss */
+/* line 148, ../sass/partials/region/_header.scss */
 header #header-fixed.header-main #header-logo-inner {
   padding-top: 5px;
 }
-/* line 138, ../sass/partials/region/_header.scss */
+/* line 150, ../sass/partials/region/_header.scss */
 header #header-fixed.header-main #header-logo-inner #header-logo-name {
   font-size: 26px;
   margin-top: 2px;
 }
-/* line 143, ../sass/partials/region/_header.scss */
+/* line 155, ../sass/partials/region/_header.scss */
 header #header-fixed.header-main #header-menu-inner {
   margin-top: 8px;
 }
-/* line 147, ../sass/partials/region/_header.scss */
+/* line 159, ../sass/partials/region/_header.scss */
 header #header-fixed navigation {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
   opacity: 0;
 }
-/* line 149, ../sass/partials/region/_header.scss */
+/* line 161, ../sass/partials/region/_header.scss */
 header #header-fixed navigation.header-search-menu-active {
   filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false);
   opacity: 1;
 }
-/* line 153, ../sass/partials/region/_header.scss */
+/* line 165, ../sass/partials/region/_header.scss */
 header #header-fixed #header-hidden-search {
   position: absolute;
   width: 340px;
   right: 0;
-  top: 4px;
+  top: 6px;
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
   opacity: 0;
   -moz-transition: all 0.25s ease 0s;
@@ -516,12 +540,17 @@ header #header-fixed #header-hidden-search {
   -webkit-transition-delay: 0s;
   transition: all 0.25s ease 0s;
 }
-/* line 160, ../sass/partials/region/_header.scss */
+/* line 172, ../sass/partials/region/_header.scss */
 header #header-fixed #header-hidden-search.header-search-menu-active {
   filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false);
   opacity: 1;
 }
-/* line 166, ../sass/partials/region/_header.scss */
+/* line 176, ../sass/partials/region/_header.scss */
+header #header-fixed #header-menu {
+  float: right;
+  margin-top: -44px;
+}
+/* line 182, ../sass/partials/region/_header.scss */
 header .header-mobile-tool {
   -moz-transition: all 0.25s ease 0s;
   -o-transition: all 0.25s ease 0s;
@@ -535,17 +564,23 @@ header .header-mobile-tool {
   right: 0;
   width: 100%;
   padding: 20px;
-  background: rgba(0, 0, 0, 0.8);
+  background: rgba(0, 0, 0, 0.9);
   z-index: 999;
   top: 0;
   text-align: center;
   margin-top: -100%;
 }
-/* line 181, ../sass/partials/region/_header.scss */
+/* line 195, ../sass/partials/region/_header.scss */
+header .header-mobile-tool.tool-active {
+  filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false);
+  opacity: 1;
+  margin-top: 0px;
+}
+/* line 201, ../sass/partials/region/_header.scss */
 header navigation#mobile-menu li {
   list-style: none;
 }
-/* line 184, ../sass/partials/region/_header.scss */
+/* line 204, ../sass/partials/region/_header.scss */
 header navigation#mobile-menu li a {
   color: #FFFFFF;
   font-family: Montserrat;
@@ -554,12 +589,74 @@ header navigation#mobile-menu li a {
   padding: 8px 60px;
   text-transform: uppercase;
 }
+/* line 213, ../sass/partials/region/_header.scss */
+header #mobile-menu-toggle {
+  display: none;
+  position: fixed;
+  right: 0;
+  top: 0px;
+  color: #FFFFFF;
+  background: rgba(0, 0, 0, 0.7);
+  padding: 11px 20px;
+  font-size: 28px;
+  line-height: 1;
+  cursor: pointer;
+  z-index: 999999999;
+}
 
 /* Media Queries */
 /* hi-res laptops and desktops */
 /* big landscape tablets, laptops, and desktops */
 /* tablet, landscape iPad, lo-res laptops ands desktops */
 /* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */
+@media (max-width: 768px) {
+  /* line 247, ../sass/partials/region/_header.scss */
+  #header-secondary {
+    display: none;
+  }
+
+  /* line 250, ../sass/partials/region/_header.scss */
+  header .header-main {
+    border-top: 0px;
+  }
+
+  /* line 253, ../sass/partials/region/_header.scss */
+  #mobile-menu-toggle {
+    display: block !important;
+  }
+
+  /* line 257, ../sass/partials/region/_header.scss */
+  header #header-menu.header-not-fixed {
+    display: none;
+  }
+
+  /* line 261, ../sass/partials/region/_header.scss */
+  header #header-secondary #header-secondary-right #header-secondary-links {
+    display: block;
+    visibility: hidden;
+  }
+
+  /* line 265, ../sass/partials/region/_header.scss */
+  header .header-main {
+    margin-top: 2px;
+  }
+
+  /* line 268, ../sass/partials/region/_header.scss */
+  #header-secondary-search {
+    margin-top: 8px;
+    display: block !important;
+  }
+
+  /* line 272, ../sass/partials/region/_header.scss */
+  #header-fixed #header-menu {
+    display: none;
+  }
+
+  /* line 275, ../sass/partials/region/_header.scss */
+  header .header-main #header-drupal #header-drupal-inner img {
+    margin-left: 0px;
+  }
+}
 /* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */
 /* smartphones, iPhone, portrait 480x320 phones */
 /* line 2, ../sass/partials/region/_footer.scss */
@@ -818,12 +915,11 @@ article.node--type-snippet.node--view-mode-teaser {
   -webkit-transition-delay: 0s;
   transition: all 0.25s ease 0s;
   background: #FFFFFF;
-  min-height: 300px;
   padding: 90px 30px 15px;
   margin: 0px 10px 70px;
   border: 1px solid #FFFFFF;
 }
-/* line 12, ../sass/partials/node/_snippet.scss */
+/* line 11, ../sass/partials/node/_snippet.scss */
 article.node--type-snippet.node--view-mode-teaser .snippet-description, article.node--type-snippet.node--view-mode-teaser .tools {
   color: #484848;
   -moz-transition: all 0.25s ease 0s;
@@ -832,7 +928,7 @@ article.node--type-snippet.node--view-mode-teaser .snippet-description, article.
   -webkit-transition-delay: 0s;
   transition: all 0.25s ease 0s;
 }
-/* line 16, ../sass/partials/node/_snippet.scss */
+/* line 15, ../sass/partials/node/_snippet.scss */
 article.node--type-snippet.node--view-mode-teaser .snippet-drupal-version {
   position: absolute;
   width: 120px;
@@ -851,50 +947,50 @@ article.node--type-snippet.node--view-mode-teaser .snippet-drupal-version {
   font-family: Montserrat;
   text-transform: uppercase;
 }
-/* line 34, ../sass/partials/node/_snippet.scss */
+/* line 33, ../sass/partials/node/_snippet.scss */
 article.node--type-snippet.node--view-mode-teaser .tools {
   margin-top: 15px;
 }
-/* line 37, ../sass/partials/node/_snippet.scss */
+/* line 36, ../sass/partials/node/_snippet.scss */
 article.node--type-snippet.node--view-mode-teaser .snippet-created {
   color: #AAAAAA;
   font-size: 16px;
   text-align: center;
   margin-top: 10px;
 }
-/* line 43, ../sass/partials/node/_snippet.scss */
+/* line 42, ../sass/partials/node/_snippet.scss */
 article.node--type-snippet.node--view-mode-teaser:hover {
   border-color: #0091d5;
 }
-/* line 45, ../sass/partials/node/_snippet.scss */
+/* line 44, ../sass/partials/node/_snippet.scss */
 article.node--type-snippet.node--view-mode-teaser:hover .snippet-description, article.node--type-snippet.node--view-mode-teaser:hover .tools {
   color: #0091d5;
 }
-/* line 51, ../sass/partials/node/_snippet.scss */
+/* line 50, ../sass/partials/node/_snippet.scss */
 article.node--type-snippet.node--view-mode-full :not(pre) > code[class*="language-"], article.node--type-snippet.node--view-mode-full pre[class*="language-"] {
   background: #343434;
 }
-/* line 54, ../sass/partials/node/_snippet.scss */
+/* line 53, ../sass/partials/node/_snippet.scss */
 article.node--type-snippet.node--view-mode-full pre {
   border: none;
 }
-/* line 57, ../sass/partials/node/_snippet.scss */
+/* line 56, ../sass/partials/node/_snippet.scss */
 article.node--type-snippet.node--view-mode-full section {
   padding: 20px 0px;
 }
-/* line 59, ../sass/partials/node/_snippet.scss */
+/* line 58, ../sass/partials/node/_snippet.scss */
 article.node--type-snippet.node--view-mode-full section#snippet-top {
   padding-bottom: 40px;
 }
-/* line 62, ../sass/partials/node/_snippet.scss */
+/* line 61, ../sass/partials/node/_snippet.scss */
 article.node--type-snippet.node--view-mode-full section#snippet-code, article.node--type-snippet.node--view-mode-full section#snippet-comments {
   padding-top: 100px;
 }
-/* line 66, ../sass/partials/node/_snippet.scss */
+/* line 65, ../sass/partials/node/_snippet.scss */
 article.node--type-snippet.node--view-mode-full section#snippet-code .line-numbers code {
   margin-left: -80px;
 }
-/* line 70, ../sass/partials/node/_snippet.scss */
+/* line 69, ../sass/partials/node/_snippet.scss */
 article.node--type-snippet.node--view-mode-full section .snippet-spec {
   margin-bottom: 20px;
 }
@@ -903,6 +999,21 @@ article.node--type-snippet.node--view-mode-full section .snippet-spec {
 /* hi-res laptops and desktops */
 /* big landscape tablets, laptops, and desktops */
 /* tablet, landscape iPad, lo-res laptops ands desktops */
+@media (max-width: 988px) {
+  /* line 88, ../sass/partials/node/_snippet.scss */
+  #landing-picture-inner {
+    text-align: center;
+  }
+  /* line 90, ../sass/partials/node/_snippet.scss */
+  #landing-picture-inner img {
+    margin-bottom: -20px;
+  }
+
+  /* line 94, ../sass/partials/node/_snippet.scss */
+  body.path-frontpage #landing-picture-bio #landing-bio-inner {
+    margin-left: 0px;
+  }
+}
 /* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */
 /* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */
 /* smartphones, iPhone, portrait 480x320 phones */

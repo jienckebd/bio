@@ -212,6 +212,14 @@ section#page-heading {
   }
 }
 
+.view-content .col-md-4.views-row:nth-child(3n+1) {
+  clear: both;
+}
+.view-content .col-md-6.views-row:nth-child(2n+1) {
+  clear: both;
+}
+
+
 /* Media Queries */
 
 /* hi-res laptops and desktops */

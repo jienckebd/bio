@@ -14,6 +14,10 @@
       </navigation>
     </div>
 
+    <div id="mobile-menu-toggle">
+      <span class="glyphicon glyphicon-menu-hamburger" aria-hidden="true"></span>
+    </div>
+
     <div id="header-mobile-tool-search" class="header-mobile-tool">
       <div id="header-mobile-tool-search-inner">
         Search box
@@ -87,20 +91,22 @@
       </div>
 
       <div id="header-primary" class="row header-main">
-        <a href="/">
-          <div id="header-drupal" class="col-md-1">
-            <div id="header-drupal-inner">
-              <img src="/themes/bootstrap/img/logo/drupal.png" />
+        <div id="header-logo-wrapper">
+          <a href="/" id="header-logo-link">
+            <div id="header-drupal">
+              <div id="header-drupal-inner">
+                <img src="/themes/bootstrap/img/logo/drupal.png" />
+              </div>
             </div>
-          </div>
-          <div id="header-logo" class="col-md-4">
-            <div id="header-logo-inner">
-              <div id="header-logo-name">Bryan Jiencke</div>
-              <div id="header-logo-title">Drupal Developer</div>
+            <div id="header-logo">
+              <div id="header-logo-inner">
+                <div id="header-logo-name">Bryan Jiencke</div>
+                <div id="header-logo-title">Drupal Developer</div>
+              </div>
             </div>
-          </div>
-        </a>
-        <div id="header-menu" class="col-md-7">
+          </a>
+        </div>
+        <div id="header-menu" class="header-not-fixed">
           <div id="header-menu-inner">
             <navigation id="main">
               {{ menu }}

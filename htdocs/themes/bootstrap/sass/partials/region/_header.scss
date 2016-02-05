@@ -46,11 +46,16 @@ header {
   }
   .header-main {
     border-top: 1px dotted #AAAAAA;
+    position: relative;
     #header-drupal {
+      float: left;
+      padding-right: 20px;
+      margin-left: 15px;
       #header-drupal-inner {
         text-align: center;
         border-right: 1px dotted #AAAAAA;
         margin: 20px 0px;
+        padding-right: 15px;
         img {
           max-width: 70px;
           margin-left: -30px;
@@ -78,27 +83,34 @@ header {
         margin: 0px 5px;
       }
     }
-    #header-menu-inner {
-      float: right;
-      margin-top: 35px;
-      margin-right: -30px;
-      ul li {
-        border-right: 1px dotted #AAAAAA;
-        &:last-child {
-          border-right: none;
-        }
-        a {
-          @include transition(all .25s ease 0s);
-          font-family: $heading-font-family;
-          font-size: 20px;
-          color: #343434;
-          padding: 10px 20px;
-          @include inline-block();
-          &:hover {
-            background-color: transparent;
-            color: $blue;
+    #header-menu {
+      #header-menu-inner {
+        float: right;
+        margin-top: 35px;
+        margin-right: -30px;
+        ul li {
+          border-right: 1px dotted #AAAAAA;
+          &:last-child {
+            border-right: none;
+          }
+          a {
+            @include transition(all .25s ease 0s);
+            font-family: $heading-font-family;
+            font-size: 20px;
+            color: #343434;
+            padding: 10px 20px;
+            @include inline-block();
+            &:hover {
+              background-color: transparent;
+              color: $blue;
+            }
           }
         }
+      }
+      &.header-not-fixed {
+        position: absolute;
+        bottom: 15px;
+        right: 15px;
       }
     }
   }
@@ -154,12 +166,16 @@ header {
       position: absolute;
       width: 340px;
       right: 0;
-      top: 4px;
+      top: 6px;
       @include opacity(0);
       @include transition(all .25s ease 0s);
       &.header-search-menu-active {
         @include opacity(1);
       }
+    }
+    #header-menu {
+      float: right;
+      margin-top: -44px;
     }
   }
 
@@ -171,11 +187,15 @@ header {
     right: 0;
     width: 100%;
     padding: 20px;
-    background: rgba(0, 0, 0, .8);
+    background: rgba(0, 0, 0, .9);
     z-index: 999;
     top: 0;
     text-align: center;
     margin-top: -100%;
+    &.tool-active {
+      @include opacity(1);
+      margin-top: 0px;
+    }
   }
 
   navigation#mobile-menu li {
@@ -190,31 +210,77 @@ header {
     text-transform: uppercase;
   }
 
+  #mobile-menu-toggle {
+    display: none;
+    position: fixed;
+    right: 0;
+    top: 0px;
+    color: #FFFFFF;
+    background: rgba(0, 0, 0, .7);
+    padding: 11px 20px;
+    font-size: 28px;
+    line-height: 1;
+    cursor: pointer;
+    z-index: 999999999;
+  }
+
+
 
 }
 
 /* Media Queries */
 
 /* hi-res laptops and desktops */
-@media (min-width:1281px) {
+@media (max-width:1281px) {
 }
 
 /* big landscape tablets, laptops, and desktops */
-@media (min-width:1025px) {
+@media (max-width:1025px) {
 }
 
 /* tablet, landscape iPad, lo-res laptops ands desktops */
-@media (min-width:961px) {
+@media (max-width:961px) {
 }
 
 /* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */
-@media (min-width:641px) {
+@media (max-width:768px) {
+  #header-secondary {
+    display: none;
+  }
+  header .header-main {
+    border-top: 0px;
+  }
+  #mobile-menu-toggle {
+    display: block !important;
+  }
+  header {
+    #header-menu.header-not-fixed {
+      display: none;
+    }
+  }
+  header #header-secondary #header-secondary-right #header-secondary-links {
+    display: block;
+    visibility: hidden;
+  }
+  header .header-main {
+    margin-top: 2px;
+  }
+  #header-secondary-search {
+    margin-top: 8px;
+    display: block !important;
+  }
+  #header-fixed #header-menu {
+    display: none;
+  }
+  header .header-main #header-drupal #header-drupal-inner img {
+    margin-left: 0px;
+  }
 }
 
 /* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */
-@media (min-width:481px) {
+@media (max-width:481px) {
 }
 
 /* smartphones, iPhone, portrait 480x320 phones */
-@media (min-width:320px) {
+@media (max-width:320px) {
 }

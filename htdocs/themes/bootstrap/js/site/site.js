@@ -33,7 +33,7 @@
 
             // adding classes on scroll
             $(window).scroll(function(){
-            var $header = $('#header-fixed');
+            var $header = $('#header-fixed, #mobile-menu-toggle');
             if ($(this).scrollTop() > 200){
               if(!$header.hasClass('scrolled')) {
                   $header.addClass("scrolled");
@@ -55,7 +55,7 @@
 
             // mobile menu
             $('#mobile-menu-toggle').click(function() {
-              $('#mobile-menu').addClass('mobile-menu-active');
+              $('.header-mobile-tool').addClass('tool-active');
               return false;
             });
             $('#mobile-menu-close').click(function() {
