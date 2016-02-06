@@ -715,12 +715,10 @@ $settings['container_yamls'][] = __DIR__ . '/services.yml';
 #   include __DIR__ . '/settings.local.php';
 # }
 
-$password = (($_SERVER['HTTP_HOST'] == 'bio.local') || $_SERVER['HTTP_HOST'] == 'default') ? '' : 'root';
-
 $databases['default']['default'] = array (
   'database' => 'bio',
-  'username' => 'root',
-  'password' => $password,
+  'username' => 'bio',
+  'password' => 'aFfWEmjE66*739',
   'prefix' => '',
   'host' => 'localhost',
   'port' => '3306',
@@ -730,8 +728,8 @@ $databases['default']['default'] = array (
 
 $databases['old']['default'] = array (
   'database' => 'old_bio',
-  'username' => 'root',
-  'password' => '',
+  'username' => 'bio',
+  'password' => 'aFfWEmjE66*739',
   'prefix' => '',
   'host' => 'localhost',
   'port' => '3306',

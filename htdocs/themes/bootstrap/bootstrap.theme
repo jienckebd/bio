@@ -356,7 +356,7 @@ function bootstrap_preprocess_listing(&$variables) {
   global $heading_subtitle;
   $heading_subtitle = $subtitle;
 
-  $block = \Drupal\block\Entity\Block::load('exposedformsnippet_listingpage_1');
+  $block = \Drupal\block\Entity\Block::load($block_id);
   $block_content = \Drupal::entityManager()
   ->getViewBuilder('block')
   ->view($block);
