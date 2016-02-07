@@ -55,13 +55,12 @@
 
             // mobile menu
             $('#mobile-menu-toggle').click(function() {
-              $('.header-mobile-tool').addClass('tool-active');
+              $('.header-mobile-tool').toggleClass('tool-active');
+              $('#mobile-menu-toggle .glyphicon').toggleClass('glyphicon-remove');
+              $('#mobile-menu-toggle .glyphicon').toggleClass('glyphicon-menu-hamburger');
               return false;
             });
-            $('#mobile-menu-close').click(function() {
-              $('#mobile-menu').removeClass('mobile-menu-active');
-              return false;
-            });
+
         }
 
     };

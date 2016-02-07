@@ -55,7 +55,7 @@
 			"file": "htdocs/themes/bootstrap/sass/partials/node/_snippet.scss",
 			"settings":
 			{
-				"buffer_size": 2377,
+				"buffer_size": 2416,
 				"line_ending": "Unix"
 			}
 		}
@@ -545,8 +545,8 @@
 						"selection":
 						[
 							[
-								2463,
-								2463
+								1050,
+								1050
 							]
 						],
 						"settings":
@@ -705,7 +705,9 @@
 								"bh_unmatched_close",
 								"bh_unmatched_content"
 							],
-							"syntax": "Packages/Sass/Syntaxes/Sass.tmLanguage"
+							"syntax": "Packages/Sass/Syntaxes/Sass.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,
@@ -897,15 +899,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 2377,
+						"buffer_size": 2416,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								2376,
-								1807
+								0,
+								0
 							]
 						],
 						"settings":

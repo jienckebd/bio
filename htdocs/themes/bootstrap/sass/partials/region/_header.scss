@@ -100,7 +100,7 @@ header {
             color: #343434;
             padding: 10px 20px;
             @include inline-block();
-            &:hover {
+            &:hover, &:active, &:focus {
               background-color: transparent;
               color: $blue;
             }
@@ -185,16 +185,19 @@ header {
     position: fixed;
     left: 0;
     right: 0;
-    width: 100%;
-    padding: 20px;
-    background: rgba(0, 0, 0, .9);
-    z-index: 999;
     top: 0;
+    bottom: 0;
+    padding: 80px 20px 20px;
+    background: rgba(35, 35, 35, .95);
     text-align: center;
     margin-top: -100%;
+    z-index: -1;
+    visibility: hidden;
     &.tool-active {
       @include opacity(1);
       margin-top: 0px;
+      z-index: 999;
+      visibility: visible;
     }
   }
 
@@ -208,23 +211,32 @@ header {
     display: inline-block;
     padding: 8px 60px;
     text-transform: uppercase;
+    &:hover {
+      color: $blue;
+    }
   }
 
   #mobile-menu-toggle {
+    @include transition(all .25s ease 0s);
     display: none;
     position: fixed;
     right: 0;
-    top: 0px;
+    top: 24px;
     color: #FFFFFF;
     background: rgba(0, 0, 0, .7);
-    padding: 11px 20px;
+    padding: 7px 12px 7px;
     font-size: 28px;
     line-height: 1;
     cursor: pointer;
     z-index: 999999999;
+    @include transition(all .25s ease 0s);
+    &:hover {
+      color: $blue;
+    }
+    &.scrolled {
+      top: 4px;
+    }
   }
-
-
 
 }
 
@@ -274,6 +286,31 @@ header {
   }
   header .header-main #header-drupal #header-drupal-inner img {
     margin-left: 0px;
+  }
+  header .header-main #header-logo-inner #header-logo-name {
+    font-size: 24px;
+    margin-top: 6px;
+  }
+  header .header-main #header-logo-inner #header-logo-title {
+    font-size: 16px;
+    margin-top: -5px;
+  }
+  header .header-main #header-drupal #header-drupal-inner img {
+    max-width: 50px;
+  }
+  header .header-main #header-drupal #header-drupal-inner {
+    padding-right: 5px;
+  }
+  header #header-fixed.header-main #header-drupal {
+    margin-left: -25px;
+  }
+  header #header-fixed.header-main #header-logo-inner #header-logo-name {
+    font-size: 24px;
+    margin-left: -8px;
+    margin-top: 4px;
+  }
+  header .header-main #header-drupal {
+    padding-right: 10px;
   }
 }
 

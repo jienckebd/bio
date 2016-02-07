@@ -5,6 +5,7 @@ htdocs/sites/*/*settings*.php
 htdocs/sites/*/files/php
 htdocs/sites/*/private
 htdocs/themes/bootstrap/.sass-cache*
+*.sublime-*
 
 # Ignore default text files
 robots.txt

@@ -23,11 +23,11 @@ html body .region.region-content {
 
 /* line 19, ../sass/partials/_layout.scss */
 a {
-  -moz-transition: all 0.25s ease 0s;
-  -o-transition: all 0.25s ease 0s;
-  -webkit-transition: all 0.25s ease;
+  -moz-transition: color 0.25s ease 0s;
+  -o-transition: color 0.25s ease 0s;
+  -webkit-transition: color 0.25s ease;
   -webkit-transition-delay: 0s;
-  transition: all 0.25s ease 0s;
+  transition: color 0.25s ease 0s;
   outline: 0 !important;
 }
 /* line 22, ../sass/partials/_layout.scss */
@@ -144,7 +144,7 @@ section#page-heading h1 {
   padding: 20px 0px;
   border-bottom: 0px;
   margin: 0px;
-  line-height: 1.3;
+  line-height: 1.1;
   color: #FFFFFF;
   font-family: Montserrat;
   margin-left: -20px;
@@ -190,97 +190,64 @@ section#page-heading h1 {
 }
 
 /* line 149, ../sass/partials/_layout.scss */
-#listing {
-  margin-top: 20px;
-}
-/* line 151, ../sass/partials/_layout.scss */
-#listing #listing-facets {
-  border-left: 1px dotted #AAAAAA;
-  border-bottom: 1px dotted #AAAAAA;
-  padding: 30px 10px;
-}
-/* line 155, ../sass/partials/_layout.scss */
-#listing #listing-facets label {
-  display: block;
-}
-/* line 158, ../sass/partials/_layout.scss */
-#listing #listing-facets .form-item {
-  margin-bottom: 20px;
-}
-/* line 161, ../sass/partials/_layout.scss */
-#listing #listing-facets .form-item-field-tools-target-id .form-control {
-  height: 240px;
-  width: 100%;
-}
-/* line 165, ../sass/partials/_layout.scss */
-#listing #listing-facets .form-item-field-version-target-id .form-control {
-  height: 70px;
-  width: 100%;
-}
-/* line 169, ../sass/partials/_layout.scss */
-#listing #listing-facets .form-item-keys .form-control {
-  width: 264px;
-}
-
-/* line 175, ../sass/partials/_layout.scss */
 .colorset-dark {
   background-color: #343434;
   color: #FFFFFF;
 }
-/* line 178, ../sass/partials/_layout.scss */
+/* line 152, ../sass/partials/_layout.scss */
 .colorset-dark a {
   color: #ffb400;
 }
-/* line 180, ../sass/partials/_layout.scss */
+/* line 154, ../sass/partials/_layout.scss */
 .colorset-dark a:hover {
   color: #FFFFFF;
 }
 
-/* line 186, ../sass/partials/_layout.scss */
+/* line 160, ../sass/partials/_layout.scss */
 .colorset-blue {
   background-color: #0091d5;
   color: #FFFFFF;
 }
-/* line 189, ../sass/partials/_layout.scss */
+/* line 163, ../sass/partials/_layout.scss */
 .colorset-blue a {
   color: #ffb400;
 }
-/* line 191, ../sass/partials/_layout.scss */
+/* line 165, ../sass/partials/_layout.scss */
 .colorset-blue a:hover {
   color: #FFFFFF;
 }
-/* line 195, ../sass/partials/_layout.scss */
+/* line 169, ../sass/partials/_layout.scss */
 .colorset-blue section .section-heading {
   background-color: #FFFFFF;
 }
-/* line 197, ../sass/partials/_layout.scss */
+/* line 171, ../sass/partials/_layout.scss */
 .colorset-blue section .section-heading:before {
   border-color: #FFFFFF;
 }
 
-/* line 203, ../sass/partials/_layout.scss */
+/* line 177, ../sass/partials/_layout.scss */
 .box {
   -moz-box-shadow: 0 16px 22px -20px rgba(0, 0, 0, 0.9);
   -webkit-box-shadow: 0 16px 22px -20px rgba(0, 0, 0, 0.9);
   box-shadow: 0 16px 22px -20px rgba(0, 0, 0, 0.9);
   padding: 20px;
 }
-/* line 206, ../sass/partials/_layout.scss */
+/* line 180, ../sass/partials/_layout.scss */
 .box h2 {
   font-family: Montserrat;
   padding-bottom: 5px;
 }
-/* line 210, ../sass/partials/_layout.scss */
+/* line 184, ../sass/partials/_layout.scss */
 .box .field {
   margin-bottom: 20px;
 }
 
-/* line 215, ../sass/partials/_layout.scss */
+/* line 189, ../sass/partials/_layout.scss */
 .view-content .col-md-4.views-row:nth-child(3n+1) {
   clear: both;
 }
 
-/* line 218, ../sass/partials/_layout.scss */
+/* line 192, ../sass/partials/_layout.scss */
 .view-content .col-md-6.views-row:nth-child(2n+1) {
   clear: both;
 }
@@ -290,6 +257,58 @@ section#page-heading h1 {
 /* big landscape tablets, laptops, and desktops */
 /* tablet, landscape iPad, lo-res laptops ands desktops */
 /* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */
+@media (max-width: 768px) {
+  /* line 212, ../sass/partials/_layout.scss */
+  html body {
+    font-size: 16px;
+  }
+
+  /* line 215, ../sass/partials/_layout.scss */
+  section:hover > .section-heading {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+
+  /* line 219, ../sass/partials/_layout.scss */
+  section .section-heading {
+    height: 48px;
+  }
+  /* line 221, ../sass/partials/_layout.scss */
+  section .section-heading h2 {
+    font-size: 20px;
+    padding-top: 0px !important;
+  }
+  /* line 225, ../sass/partials/_layout.scss */
+  section .section-heading::before {
+    border-width: 24px 20px;
+  }
+
+  /* line 229, ../sass/partials/_layout.scss */
+  .col-md-4, .col-md-6 {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+
+  /* line 233, ../sass/partials/_layout.scss */
+  h1, .h1 {
+    font-size: 28px;
+  }
+
+  /* line 236, ../sass/partials/_layout.scss */
+  .breadcrumb {
+    font-size: 14px;
+  }
+
+  /* line 239, ../sass/partials/_layout.scss */
+  .btn {
+    padding: 10px 12px;
+  }
+
+  /* line 242, ../sass/partials/_layout.scss */
+  .node-link h3 {
+    padding: 0 15px 5px 10px !important;
+  }
+}
 /* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */
 /* smartphones, iPhone, portrait 480x320 phones */
 /* line 1, ../sass/partials/region/_header.scss */
@@ -439,7 +458,7 @@ header .header-main #header-menu #header-menu-inner ul li a {
   *display: inline;
 }
 /* line 103, ../sass/partials/region/_header.scss */
-header .header-main #header-menu #header-menu-inner ul li a:hover {
+header .header-main #header-menu #header-menu-inner ul li a:hover, header .header-main #header-menu #header-menu-inner ul li a:active, header .header-main #header-menu #header-menu-inner ul li a:focus {
   background-color: transparent;
   color: #0091d5;
 }
@@ -562,25 +581,28 @@ header .header-mobile-tool {
   position: fixed;
   left: 0;
   right: 0;
-  width: 100%;
-  padding: 20px;
-  background: rgba(0, 0, 0, 0.9);
-  z-index: 999;
   top: 0;
+  bottom: 0;
+  padding: 80px 20px 20px;
+  background: rgba(35, 35, 35, 0.95);
   text-align: center;
   margin-top: -100%;
+  z-index: -1;
+  visibility: hidden;
 }
-/* line 195, ../sass/partials/region/_header.scss */
+/* line 196, ../sass/partials/region/_header.scss */
 header .header-mobile-tool.tool-active {
   filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false);
   opacity: 1;
   margin-top: 0px;
+  z-index: 999;
+  visibility: visible;
 }
-/* line 201, ../sass/partials/region/_header.scss */
+/* line 204, ../sass/partials/region/_header.scss */
 header navigation#mobile-menu li {
   list-style: none;
 }
-/* line 204, ../sass/partials/region/_header.scss */
+/* line 207, ../sass/partials/region/_header.scss */
 header navigation#mobile-menu li a {
   color: #FFFFFF;
   font-family: Montserrat;
@@ -589,19 +611,41 @@ header navigation#mobile-menu li a {
   padding: 8px 60px;
   text-transform: uppercase;
 }
-/* line 213, ../sass/partials/region/_header.scss */
+/* line 214, ../sass/partials/region/_header.scss */
+header navigation#mobile-menu li a:hover {
+  color: #0091d5;
+}
+/* line 219, ../sass/partials/region/_header.scss */
 header #mobile-menu-toggle {
+  -moz-transition: all 0.25s ease 0s;
+  -o-transition: all 0.25s ease 0s;
+  -webkit-transition: all 0.25s ease;
+  -webkit-transition-delay: 0s;
+  transition: all 0.25s ease 0s;
   display: none;
   position: fixed;
   right: 0;
-  top: 0px;
+  top: 24px;
   color: #FFFFFF;
   background: rgba(0, 0, 0, 0.7);
-  padding: 11px 20px;
+  padding: 7px 12px 7px;
   font-size: 28px;
   line-height: 1;
   cursor: pointer;
   z-index: 999999999;
+  -moz-transition: all 0.25s ease 0s;
+  -o-transition: all 0.25s ease 0s;
+  -webkit-transition: all 0.25s ease;
+  -webkit-transition-delay: 0s;
+  transition: all 0.25s ease 0s;
+}
+/* line 233, ../sass/partials/region/_header.scss */
+header #mobile-menu-toggle:hover {
+  color: #0091d5;
+}
+/* line 236, ../sass/partials/region/_header.scss */
+header #mobile-menu-toggle.scrolled {
+  top: 4px;
 }
 
 /* Media Queries */
@@ -610,51 +654,90 @@ header #mobile-menu-toggle {
 /* tablet, landscape iPad, lo-res laptops ands desktops */
 /* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */
 @media (max-width: 768px) {
-  /* line 247, ../sass/partials/region/_header.scss */
+  /* line 259, ../sass/partials/region/_header.scss */
   #header-secondary {
     display: none;
   }
 
-  /* line 250, ../sass/partials/region/_header.scss */
+  /* line 262, ../sass/partials/region/_header.scss */
   header .header-main {
     border-top: 0px;
   }
 
-  /* line 253, ../sass/partials/region/_header.scss */
+  /* line 265, ../sass/partials/region/_header.scss */
   #mobile-menu-toggle {
     display: block !important;
   }
 
-  /* line 257, ../sass/partials/region/_header.scss */
+  /* line 269, ../sass/partials/region/_header.scss */
   header #header-menu.header-not-fixed {
     display: none;
   }
 
-  /* line 261, ../sass/partials/region/_header.scss */
+  /* line 273, ../sass/partials/region/_header.scss */
   header #header-secondary #header-secondary-right #header-secondary-links {
     display: block;
     visibility: hidden;
   }
 
-  /* line 265, ../sass/partials/region/_header.scss */
+  /* line 277, ../sass/partials/region/_header.scss */
   header .header-main {
     margin-top: 2px;
   }
 
-  /* line 268, ../sass/partials/region/_header.scss */
+  /* line 280, ../sass/partials/region/_header.scss */
   #header-secondary-search {
     margin-top: 8px;
     display: block !important;
   }
 
-  /* line 272, ../sass/partials/region/_header.scss */
+  /* line 284, ../sass/partials/region/_header.scss */
   #header-fixed #header-menu {
     display: none;
   }
 
-  /* line 275, ../sass/partials/region/_header.scss */
+  /* line 287, ../sass/partials/region/_header.scss */
   header .header-main #header-drupal #header-drupal-inner img {
     margin-left: 0px;
+  }
+
+  /* line 290, ../sass/partials/region/_header.scss */
+  header .header-main #header-logo-inner #header-logo-name {
+    font-size: 24px;
+    margin-top: 6px;
+  }
+
+  /* line 294, ../sass/partials/region/_header.scss */
+  header .header-main #header-logo-inner #header-logo-title {
+    font-size: 16px;
+    margin-top: -5px;
+  }
+
+  /* line 298, ../sass/partials/region/_header.scss */
+  header .header-main #header-drupal #header-drupal-inner img {
+    max-width: 50px;
+  }
+
+  /* line 301, ../sass/partials/region/_header.scss */
+  header .header-main #header-drupal #header-drupal-inner {
+    padding-right: 5px;
+  }
+
+  /* line 304, ../sass/partials/region/_header.scss */
+  header #header-fixed.header-main #header-drupal {
+    margin-left: -25px;
+  }
+
+  /* line 307, ../sass/partials/region/_header.scss */
+  header #header-fixed.header-main #header-logo-inner #header-logo-name {
+    font-size: 24px;
+    margin-left: -8px;
+    margin-top: 4px;
+  }
+
+  /* line 312, ../sass/partials/region/_header.scss */
+  header .header-main #header-drupal {
+    padding-right: 10px;
   }
 }
 /* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */
@@ -723,6 +806,24 @@ footer #footer-copyright {
 /* big landscape tablets, laptops, and desktops */
 /* tablet, landscape iPad, lo-res laptops ands desktops */
 /* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */
+@media (max-width: 768px) {
+  /* line 67, ../sass/partials/region/_footer.scss */
+  footer #footer-name-menu #footer-menu ul li a {
+    font-size: 18px;
+    padding: 10px;
+  }
+
+  /* line 71, ../sass/partials/region/_footer.scss */
+  footer #footer-name-menu #footer-name-title #footer-name {
+    font-size: 26px;
+  }
+
+  /* line 74, ../sass/partials/region/_footer.scss */
+  footer #footer-name-menu #footer-name-title #footer-title {
+    font-size: 18px;
+    margin-top: -5px;
+  }
+}
 /* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */
 /* smartphones, iPhone, portrait 480x320 phones */
 /* line 2, ../sass/partials/functional/_form.scss */
@@ -764,8 +865,10 @@ body.path-frontpage #landing-picture-bio #landing-picture img {
   border: 10px solid #FFFFFF;
   position: relative;
   z-index: 1;
+  max-width: 100%;
+  height: auto;
 }
-/* line 16, ../sass/partials/page/_landing.scss */
+/* line 18, ../sass/partials/page/_landing.scss */
 body.path-frontpage #landing-picture-bio #landing-bio-inner {
   -moz-border-radius: 3px;
   -webkit-border-radius: 3px;
@@ -779,33 +882,36 @@ body.path-frontpage #landing-picture-bio #landing-bio-inner {
   color: #484848;
   margin-left: -150px;
 }
-/* line 24, ../sass/partials/page/_landing.scss */
+/* line 26, ../sass/partials/page/_landing.scss */
 body.path-frontpage #landing-picture-bio #landing-bio-inner #landing-bio-employee {
   text-align: center;
   margin-top: 10px;
 }
-/* line 31, ../sass/partials/page/_landing.scss */
+/* line 33, ../sass/partials/page/_landing.scss */
 body.path-frontpage #landing-project {
   clear: both;
 }
-/* line 33, ../sass/partials/page/_landing.scss */
+/* line 35, ../sass/partials/page/_landing.scss */
 body.path-frontpage #landing-project .cycle-slideshow {
   position: relative;
 }
-/* line 35, ../sass/partials/page/_landing.scss */
+/* line 37, ../sass/partials/page/_landing.scss */
 body.path-frontpage #landing-project .cycle-slideshow:hover .cycle-slide .slide-caption {
   filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false);
   opacity: 1;
   margin-left: 0px;
 }
-/* line 39, ../sass/partials/page/_landing.scss */
+/* line 41, ../sass/partials/page/_landing.scss */
 body.path-frontpage #landing-project .cycle-slideshow .cycle-slide {
   width: 100%;
   height: 500px;
   background-attachment: fixed;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  -webkit-background-size: cover;
   background-size: cover;
 }
-/* line 44, ../sass/partials/page/_landing.scss */
+/* line 46, ../sass/partials/page/_landing.scss */
 body.path-frontpage #landing-project .cycle-slideshow .cycle-slide .slide-caption {
   background: rgba(20, 20, 20, 0.7) none repeat scroll 0 0;
   color: #ffffff;
@@ -826,20 +932,20 @@ body.path-frontpage #landing-project .cycle-slideshow .cycle-slide .slide-captio
   width: 400px;
   margin-left: -400px;
 }
-/* line 58, ../sass/partials/page/_landing.scss */
+/* line 60, ../sass/partials/page/_landing.scss */
 body.path-frontpage #landing-project .cycle-slideshow .cycle-slide .slide-caption .slide-caption-body {
   margin: 20px auto;
 }
-/* line 61, ../sass/partials/page/_landing.scss */
+/* line 63, ../sass/partials/page/_landing.scss */
 body.path-frontpage #landing-project .cycle-slideshow .cycle-slide .slide-caption .slide-legal {
   color: #DDDDDD;
   font-size: 14px;
 }
-/* line 65, ../sass/partials/page/_landing.scss */
+/* line 67, ../sass/partials/page/_landing.scss */
 body.path-frontpage #landing-project .cycle-slideshow .cycle-slide .slide-caption .slide-buttons {
   margin-top: 20px;
 }
-/* line 70, ../sass/partials/page/_landing.scss */
+/* line 72, ../sass/partials/page/_landing.scss */
 body.path-frontpage #landing-project .cycle-slideshow .cycle-pager {
   width: 100%;
   text-align: right;
@@ -848,17 +954,17 @@ body.path-frontpage #landing-project .cycle-slideshow .cycle-pager {
   z-index: 995;
   right: 30px;
 }
-/* line 77, ../sass/partials/page/_landing.scss */
+/* line 79, ../sass/partials/page/_landing.scss */
 body.path-frontpage #landing-project .cycle-slideshow .cycle-pager span {
   color: #FFFFFF;
   font-size: 90px;
   cursor: pointer;
 }
-/* line 81, ../sass/partials/page/_landing.scss */
+/* line 83, ../sass/partials/page/_landing.scss */
 body.path-frontpage #landing-project .cycle-slideshow .cycle-pager span:hover, body.path-frontpage #landing-project .cycle-slideshow .cycle-pager span.cycle-pager-active {
   color: #0091d5;
 }
-/* line 89, ../sass/partials/page/_landing.scss */
+/* line 91, ../sass/partials/page/_landing.scss */
 body.path-frontpage #landing-snippet {
   clear: both;
   padding: 90px 0px 60px;
@@ -872,6 +978,41 @@ body.path-frontpage #landing-snippet {
 /* big landscape tablets, laptops, and desktops */
 /* tablet, landscape iPad, lo-res laptops ands desktops */
 /* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */
+@media (max-width: 768px) {
+  /* line 116, ../sass/partials/page/_landing.scss */
+  body.path-frontpage #landing-project .cycle-slideshow .cycle-slide {
+    background-attachment: scroll;
+  }
+  /* line 118, ../sass/partials/page/_landing.scss */
+  body.path-frontpage #landing-project .cycle-slideshow .cycle-slide .slide-caption {
+    width: 100%;
+    margin-left: 0px;
+    filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false);
+    opacity: 1;
+    padding: 105px 10px 40px;
+  }
+  /* line 123, ../sass/partials/page/_landing.scss */
+  body.path-frontpage #landing-project .cycle-slideshow .cycle-slide .slide-caption img {
+    max-height: 100px;
+  }
+
+  /* line 128, ../sass/partials/page/_landing.scss */
+  body.path-frontpage #landing-picture-bio #landing-picture {
+    margin: 0px 40px;
+  }
+
+  /* line 131, ../sass/partials/page/_landing.scss */
+  body.path-frontpage #landing-picture-bio #landing-bio-inner {
+    padding: 40px 20px;
+    margin: 0px auto !important;
+    width: 85%;
+  }
+
+  /* line 136, ../sass/partials/page/_landing.scss */
+  body.path-frontpage #landing-picture-bio {
+    padding: 20px 0px;
+  }
+}
 /* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */
 /* smartphones, iPhone, portrait 480x320 phones */
 /* line 2, ../sass/partials/page/_contact.scss */
@@ -895,6 +1036,53 @@ body.path-frontpage #landing-snippet {
 /* big landscape tablets, laptops, and desktops */
 /* tablet, landscape iPad, lo-res laptops ands desktops */
 /* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */
+/* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */
+/* smartphones, iPhone, portrait 480x320 phones */
+/* line 1, ../sass/partials/page/_listing.scss */
+#listing {
+  margin-top: 20px;
+}
+/* line 3, ../sass/partials/page/_listing.scss */
+#listing #listing-facets {
+  border-left: 1px dotted #AAAAAA;
+  border-bottom: 1px dotted #AAAAAA;
+  padding: 30px 10px;
+}
+/* line 7, ../sass/partials/page/_listing.scss */
+#listing #listing-facets label {
+  display: block;
+}
+/* line 10, ../sass/partials/page/_listing.scss */
+#listing #listing-facets .form-item {
+  margin-bottom: 20px;
+}
+/* line 13, ../sass/partials/page/_listing.scss */
+#listing #listing-facets .form-item-field-tools-target-id .form-control {
+  height: 240px;
+  width: 100%;
+}
+/* line 17, ../sass/partials/page/_listing.scss */
+#listing #listing-facets .form-item-field-version-target-id .form-control {
+  height: 70px;
+  width: 100%;
+}
+/* line 21, ../sass/partials/page/_listing.scss */
+#listing #listing-facets .form-item-keys .form-control {
+  width: 264px;
+}
+
+/* Media Queries */
+/* hi-res laptops and desktops */
+/* big landscape tablets, laptops, and desktops */
+/* tablet, landscape iPad, lo-res laptops ands desktops */
+/* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */
+@media (max-width: 768px) {
+  /* line 43, ../sass/partials/page/_listing.scss */
+  #listing #listing-facets {
+    border-left: none;
+    margin-bottom: 20px;
+  }
+}
 /* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */
 /* smartphones, iPhone, portrait 480x320 phones */
 /* line 1, ../sass/partials/node/_snippet.scss */
@@ -1015,6 +1203,15 @@ article.node--type-snippet.node--view-mode-full section .snippet-spec {
   }
 }
 /* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */
+@media (max-width: 768px) {
+  /* line 101, ../sass/partials/node/_snippet.scss */
+  article.node--type-snippet.node--view-mode-teaser {
+    margin-left: 0px;
+    margin-right: 0px;
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}
 /* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */
 /* smartphones, iPhone, portrait 480x320 phones */
 /* line 1, ../sass/partials/node/_project.scss */
@@ -1144,15 +1341,22 @@ article.node--type-project.node--view-mode-full #project-gallery .gallery-item-i
   *zoom: 1;
   *display: inline;
 }
-/* line 96, ../sass/partials/node/_project.scss */
-article.node--type-project.node--view-mode-full #project-gallery:hover .section-heading {
-  padding-right: 200px;
-}
 
 /* Media Queries */
 /* hi-res laptops and desktops */
 /* big landscape tablets, laptops, and desktops */
 /* tablet, landscape iPad, lo-res laptops ands desktops */
 /* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */
+@media (max-width: 768px) {
+  /* line 116, ../sass/partials/node/_project.scss */
+  article.node--type-project.node--view-mode-teaser .project-slideshow {
+    margin-top: 15px;
+  }
+
+  /* line 119, ../sass/partials/node/_project.scss */
+  article.node--type-project.node--view-mode-full #project-gallery .gallery-item {
+    margin-bottom: 15px;
+  }
+}
 /* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */
 /* smartphones, iPhone, portrait 480x320 phones */

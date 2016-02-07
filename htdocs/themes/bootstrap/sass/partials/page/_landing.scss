@@ -11,6 +11,8 @@ body.path-frontpage {
         border: 10px solid #FFFFFF;
         position: relative;
         z-index: 1;
+        max-width: 100%;
+        height: auto;
       }
     }
     #landing-bio-inner {
@@ -40,7 +42,7 @@ body.path-frontpage {
         width: 100%;
         height: 500px;
         background-attachment: fixed;
-        background-size: cover;
+        @include background-size(cover);
         .slide-caption {
           background: rgba(20, 20, 20, 0.7) none repeat scroll 0 0;
           color: #ffffff;
@@ -98,25 +100,48 @@ body.path-frontpage {
 /* Media Queries */
 
 /* hi-res laptops and desktops */
-@media (min-width:1281px) {
+@media (max-width:1281px) {
 }
 
 /* big landscape tablets, laptops, and desktops */
-@media (min-width:1025px) {
+@media (max-width:1025px) {
 }
 
 /* tablet, landscape iPad, lo-res laptops ands desktops */
-@media (min-width:961px) {
+@media (max-width:961px) {
 }
 
 /* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */
-@media (min-width:641px) {
+@media (max-width:768px) {
+  body.path-frontpage #landing-project .cycle-slideshow .cycle-slide {
+    background-attachment: scroll;
+    .slide-caption {
+      width: 100%;
+      margin-left: 0px;
+      @include opacity(1);
+      padding: 105px 10px 40px;
+      img {
+        max-height: 100px;
+      }
+    }
+  }
+  body.path-frontpage #landing-picture-bio #landing-picture {
+    margin: 0px 40px;
+  }
+  body.path-frontpage #landing-picture-bio #landing-bio-inner {
+    padding: 40px 20px;
+    margin: 0px auto !important;
+    width: 85%;
+  }
+  body.path-frontpage #landing-picture-bio {
+    padding: 20px 0px;
+  }
 }
 
 /* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */
-@media (min-width:481px) {
+@media (max-width:481px) {
 }
 
 /* smartphones, iPhone, portrait 480x320 phones */
-@media (min-width:320px) {
+@media (max-width:320px) {
 }
