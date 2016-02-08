@@ -43,6 +43,15 @@ body.path-frontpage {
         height: 500px;
         background-attachment: fixed;
         @include background-size(cover);
+        &::after {
+          background: rgba(0, 0, 0, .4);
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          content: "";
+        }
         .slide-caption {
           background: rgba(20, 20, 20, 0.7) none repeat scroll 0 0;
           color: #ffffff;
@@ -126,15 +135,18 @@ body.path-frontpage {
     }
   }
   body.path-frontpage #landing-picture-bio #landing-picture {
-    margin: 0px 40px;
+    margin: 0px 35px;
   }
   body.path-frontpage #landing-picture-bio #landing-bio-inner {
     padding: 40px 20px;
     margin: 0px auto !important;
-    width: 85%;
+    width: 100%;
+    max-width: 100%;
   }
   body.path-frontpage #landing-picture-bio {
-    padding: 20px 0px;
+    max-width: 100%;
+    background-color: $blue;
+    margin: 0px !important;
   }
 }
 

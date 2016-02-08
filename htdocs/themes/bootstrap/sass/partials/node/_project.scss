@@ -46,6 +46,7 @@ article.node--type-project {
       width: 100%;
       height: 200px;
       padding: 1px;
+      @include background-size(cover);
     }
     .cycle-pager {
       position: absolute;

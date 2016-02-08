@@ -62,6 +62,16 @@ class SiteController {
 
   }
 
+  public function about() {
+
+    $build = array(
+      '#theme' => 'about',
+    );
+
+    return $build;
+
+  }
+
   public function xml_sitemap() {
 
     header('Content-type: application/xml');

@@ -16,7 +16,47 @@ function site_drush_command() {
     'description' => 'Migrates old terms.',
   );
 
+  $items['migrate-old-nodes-dates'] = array(
+    'description' => 'Migrates old node dates.',
+  );
+
   return $items;
+}
+
+function drush_site_migrate_old_nodes_dates() {
+  $node_entity_type = \Drupal::entityTypeManager()->getDefinition('node');
+
+  $old_nodes = array();
+  \Drupal\Core\Database\Database::setActiveConnection('old');
+  $results = db_query("SELECT * FROM {node_field_data} WHERE type = :type OR type = :type2", array(':type' => 'project', ':type2' => 'snippet'));
+  foreach ($results as $result) {
+    $old_nodes[$result->nid] = $result;
+  }
+  \Drupal\Core\Database\Database::setActiveConnection();
+
+  foreach ($old_nodes as $nid => $node) {
+    $nid = db_query("SELECT nid FROM {node_field_data} WHERE title = :title", array(':title' => $node->title))->fetchField();
+    if (!empty($nid)) {
+      db_update('node_field_data')
+      ->fields(
+         array(
+           'created' => $node->created,
+         )
+      )
+      ->condition('nid', $nid)
+      ->execute();
+
+      db_update('node_field_revision')
+      ->fields(
+         array(
+           'created' => $node->created,
+         )
+      )
+      ->condition('nid', $nid)
+      ->execute();
+    }
+  }
+
 }
 
 function drush_site_migrate_old_nodes() {

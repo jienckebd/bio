@@ -181,6 +181,7 @@ function bootstrap_preprocess_landing(&$variables) {
   $slides = array();
   $query = \Drupal::entityQuery('node')
     ->condition('status', 1)
+    ->condition('promote', 1)
     ->condition('type', 'project')
     ->sort('created', 'desc');
 
@@ -311,7 +312,7 @@ function bootstrap_preprocess_node(&$variables) {
 function bootstrap_preprocess_xml_sitemap(&$variables) {
   $records = array();
 
-  $paths = array('landing', 'contact', 'snippet', 'project');
+  $paths = array('/landing', '/contact', '/snippet', '/project');
 
   foreach ($paths as $path) {
     $record = array();
@@ -325,10 +326,10 @@ function bootstrap_preprocess_xml_sitemap(&$variables) {
   $results = db_query("SELECT * FROM {node_field_data} WHERE type = :type1 OR type = :type2", array(':type1' => 'snippet', ':type2' => 'project'));
   foreach ($results as $result) {
 
-    $alias = db_query("SELECT alias FROM {url_alias} WHERE source = :source", array(':source' => 'node/' . $result->nid))->fetchField();
+    $alias = db_query("SELECT alias FROM {url_alias} WHERE source = :source", array(':source' => '/node/' . $result->nid))->fetchField();
 
     $record = array();
-    $record['loc'] = !empty($alias) ? $alias : 'node/' . $result->nid;
+    $record['loc'] = !empty($alias) ? $alias : '/node/' . $result->nid;
     $record['lastmod'] = format_date($result->changed, NULL, 'Y-m-d');
     $record['priority'] = '1.0';
     $record['changefreq'] = 'monthly';

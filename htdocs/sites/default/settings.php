@@ -728,8 +728,8 @@ $databases['default']['default'] = array (
 
 $databases['old']['default'] = array (
   'database' => 'old_bio',
-  'username' => 'bio',
-  'password' => 'aFfWEmjE66*739',
+  'username' => 'old_bio',
+  'password' => '2gbfjnvwQfuk%$',
   'prefix' => '',
   'host' => 'localhost',
   'port' => '3306',

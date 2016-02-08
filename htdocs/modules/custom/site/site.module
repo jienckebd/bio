@@ -30,13 +30,12 @@ function site_theme() {
       'variables' => array('type' => NULL)
     ),
     'contact' => array(
-      'variables' => array()
     ),
     'contact_confirm' => array(
-      'variables' => array()
+    ),
+    'about' => array(
     ),
     'xml_sitemap' => array(
-      'variables' => array()
     ),
   );
 }

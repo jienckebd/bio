@@ -150,7 +150,7 @@ section#page-heading {
   background-color: #343434;
   color: #FFFFFF;
   a {
-    color: $orange;
+    color: $blue;
     &:hover {
       color: #FFFFFF;
     }
@@ -186,6 +186,17 @@ section#page-heading {
   }
 }
 
+.image-circle-big {
+  border-radius: 50%;
+  border: 20px solid $blue;
+  width: 400px;
+  height: 400px;
+}
+
+.margin-top-20 {
+  margin-top: 20px;
+}
+
 .view-content .col-md-4.views-row:nth-child(3n+1) {
   clear: both;
 }
@@ -210,7 +221,7 @@ section#page-heading {
 /* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */
 @media (max-width:768px) {
   html body {
-    font-size: 16px;
+    font-size: 14px;
   }
   section:hover > .section-heading {
     padding-left: 0px;

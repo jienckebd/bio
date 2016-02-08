@@ -45,6 +45,14 @@ site_contact:
   requirements:
     _access: 'TRUE'
 
+site_about:
+  path: 'about'
+  defaults:
+    _controller: '\Drupal\site\Controller\SiteController::about'
+    _title: 'About'
+  requirements:
+    _access: 'TRUE'
+
 site.sitemap_xml:
   path: '/sitemap.xml'
   defaults:
