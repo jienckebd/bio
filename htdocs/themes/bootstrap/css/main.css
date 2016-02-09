@@ -903,18 +903,19 @@ body.path-frontpage #landing-picture-bio #landing-bio-inner #landing-bio-employe
 /* line 33, ../sass/partials/page/_landing.scss */
 body.path-frontpage #landing-project {
   clear: both;
+  background: #343434;
 }
-/* line 35, ../sass/partials/page/_landing.scss */
+/* line 36, ../sass/partials/page/_landing.scss */
 body.path-frontpage #landing-project .cycle-slideshow {
   position: relative;
 }
-/* line 37, ../sass/partials/page/_landing.scss */
+/* line 38, ../sass/partials/page/_landing.scss */
 body.path-frontpage #landing-project .cycle-slideshow:hover .cycle-slide .slide-caption {
   filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false);
   opacity: 1;
   margin-left: 0px;
 }
-/* line 41, ../sass/partials/page/_landing.scss */
+/* line 42, ../sass/partials/page/_landing.scss */
 body.path-frontpage #landing-project .cycle-slideshow .cycle-slide {
   width: 100%;
   height: 500px;
@@ -924,7 +925,7 @@ body.path-frontpage #landing-project .cycle-slideshow .cycle-slide {
   -webkit-background-size: cover;
   background-size: cover;
 }
-/* line 46, ../sass/partials/page/_landing.scss */
+/* line 47, ../sass/partials/page/_landing.scss */
 body.path-frontpage #landing-project .cycle-slideshow .cycle-slide::after {
   background: rgba(0, 0, 0, 0.4);
   position: absolute;
@@ -934,7 +935,7 @@ body.path-frontpage #landing-project .cycle-slideshow .cycle-slide::after {
   bottom: 0;
   content: "";
 }
-/* line 55, ../sass/partials/page/_landing.scss */
+/* line 56, ../sass/partials/page/_landing.scss */
 body.path-frontpage #landing-project .cycle-slideshow .cycle-slide .slide-caption {
   background: rgba(20, 20, 20, 0.7) none repeat scroll 0 0;
   color: #ffffff;
@@ -955,20 +956,20 @@ body.path-frontpage #landing-project .cycle-slideshow .cycle-slide .slide-captio
   width: 400px;
   margin-left: -400px;
 }
-/* line 69, ../sass/partials/page/_landing.scss */
+/* line 70, ../sass/partials/page/_landing.scss */
 body.path-frontpage #landing-project .cycle-slideshow .cycle-slide .slide-caption .slide-caption-body {
   margin: 20px auto;
 }
-/* line 72, ../sass/partials/page/_landing.scss */
+/* line 73, ../sass/partials/page/_landing.scss */
 body.path-frontpage #landing-project .cycle-slideshow .cycle-slide .slide-caption .slide-legal {
   color: #DDDDDD;
   font-size: 14px;
 }
-/* line 76, ../sass/partials/page/_landing.scss */
+/* line 77, ../sass/partials/page/_landing.scss */
 body.path-frontpage #landing-project .cycle-slideshow .cycle-slide .slide-caption .slide-buttons {
   margin-top: 20px;
 }
-/* line 81, ../sass/partials/page/_landing.scss */
+/* line 82, ../sass/partials/page/_landing.scss */
 body.path-frontpage #landing-project .cycle-slideshow .cycle-pager {
   width: 100%;
   text-align: right;
@@ -977,17 +978,17 @@ body.path-frontpage #landing-project .cycle-slideshow .cycle-pager {
   z-index: 995;
   right: 30px;
 }
-/* line 88, ../sass/partials/page/_landing.scss */
+/* line 89, ../sass/partials/page/_landing.scss */
 body.path-frontpage #landing-project .cycle-slideshow .cycle-pager span {
   color: #FFFFFF;
   font-size: 90px;
   cursor: pointer;
 }
-/* line 92, ../sass/partials/page/_landing.scss */
+/* line 93, ../sass/partials/page/_landing.scss */
 body.path-frontpage #landing-project .cycle-slideshow .cycle-pager span:hover, body.path-frontpage #landing-project .cycle-slideshow .cycle-pager span.cycle-pager-active {
   color: #0091d5;
 }
-/* line 100, ../sass/partials/page/_landing.scss */
+/* line 101, ../sass/partials/page/_landing.scss */
 body.path-frontpage #landing-snippet {
   clear: both;
   padding: 90px 0px 60px;
@@ -1002,11 +1003,11 @@ body.path-frontpage #landing-snippet {
 /* tablet, landscape iPad, lo-res laptops ands desktops */
 /* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */
 @media (max-width: 768px) {
-  /* line 125, ../sass/partials/page/_landing.scss */
+  /* line 126, ../sass/partials/page/_landing.scss */
   body.path-frontpage #landing-project .cycle-slideshow .cycle-slide {
     background-attachment: scroll;
   }
-  /* line 127, ../sass/partials/page/_landing.scss */
+  /* line 128, ../sass/partials/page/_landing.scss */
   body.path-frontpage #landing-project .cycle-slideshow .cycle-slide .slide-caption {
     width: 100%;
     margin-left: 0px;
@@ -1014,17 +1015,17 @@ body.path-frontpage #landing-snippet {
     opacity: 1;
     padding: 105px 10px 40px;
   }
-  /* line 132, ../sass/partials/page/_landing.scss */
+  /* line 133, ../sass/partials/page/_landing.scss */
   body.path-frontpage #landing-project .cycle-slideshow .cycle-slide .slide-caption img {
     max-height: 100px;
   }
 
-  /* line 137, ../sass/partials/page/_landing.scss */
+  /* line 138, ../sass/partials/page/_landing.scss */
   body.path-frontpage #landing-picture-bio #landing-picture {
     margin: 0px 35px;
   }
 
-  /* line 140, ../sass/partials/page/_landing.scss */
+  /* line 141, ../sass/partials/page/_landing.scss */
   body.path-frontpage #landing-picture-bio #landing-bio-inner {
     padding: 40px 20px;
     margin: 0px auto !important;
@@ -1032,7 +1033,7 @@ body.path-frontpage #landing-snippet {
     max-width: 100%;
   }
 
-  /* line 146, ../sass/partials/page/_landing.scss */
+  /* line 147, ../sass/partials/page/_landing.scss */
   body.path-frontpage #landing-picture-bio {
     max-width: 100%;
     background-color: #0091d5;
