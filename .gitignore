@@ -3,7 +3,6 @@ htdocs/sites/*/*settings*.php
 
 # Ignore paths that contain generated content.
 htdocs/sites/*/files/php
-htdocs/sites/*/private
 htdocs/themes/bootstrap/.sass-cache*
 *.sublime-*
 
