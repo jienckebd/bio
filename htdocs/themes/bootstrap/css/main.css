@@ -853,6 +853,15 @@ form label {
 form .form-control.form-text {
   height: 42px;
 }
+/* line 13, ../sass/partials/functional/_form.scss */
+form .panel {
+  color: #343434;
+}
+/* line 16, ../sass/partials/functional/_form.scss */
+form .panel-heading .panel-title {
+  font-family: Montserrat;
+  font-size: 14px;
+}
 
 /* Media Queries */
 /* hi-res laptops and desktops */

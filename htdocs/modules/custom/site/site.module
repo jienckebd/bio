@@ -29,10 +29,6 @@ function site_theme() {
     'listing' => array(
       'variables' => array('type' => NULL)
     ),
-    'contact' => array(
-    ),
-    'contact_confirm' => array(
-    ),
     'about' => array(
     ),
     'xml_sitemap' => array(

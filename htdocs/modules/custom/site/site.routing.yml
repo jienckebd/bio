@@ -37,14 +37,6 @@ site_snippet:
   requirements:
     _access: 'TRUE'
 
-site_contact:
-  path: 'contact'
-  defaults:
-    _controller: '\Drupal\site\Controller\SiteController::contact'
-    _title: 'Contact'
-  requirements:
-    _access: 'TRUE'
-
 site_about:
   path: 'about'
   defaults:

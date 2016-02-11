@@ -1,0 +1,18 @@
+<?php
+
+/**
+ * @file
+ * Contains Drupal\contacts\contacts.module
+ */
+
+/**
+ * Implements hook_theme().
+ */
+function contacts_theme() {
+  return array(
+    'contact' => array(
+    ),
+    'contact_confirm' => array(
+    ),
+  );
+}

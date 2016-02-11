@@ -24,6 +24,7 @@
 
 use Drupal\bootstrap\Bootstrap;
 use Drupal\image\Entity\ImageStyle;
+use Drupal\contacts\Entity\Contact;
 
 /**
  * Initialize the active theme.
@@ -369,6 +370,18 @@ function bootstrap_preprocess_listing(&$variables) {
 }
 
 function bootstrap_preprocess_contact(&$variables) {
-  $contact_form = \Drupal::formBuilder()->getForm('Drupal\site\Form\ContactForm');
+
+    $default_form = \Drupal::config('contact.settings')->get('add_form');
+    $entity = \Drupal::entityManager()->getStorage('contact')->load($default_form);
+
+    $message = \Drupal::entityManager()
+      ->getStorage('contact')
+      ->create(array(
+        'langcode' => 'en',
+      ));
+
+    $contact_form = \Drupal::service('entity.form_builder')->getForm($message);
+
+
   $variables['form'] = drupal_render($contact_form);
 }

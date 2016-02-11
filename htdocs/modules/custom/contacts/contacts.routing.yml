@@ -1,0 +1,65 @@
+# This file brings everything together. Very nifty!
+
+# Route name can be used in sevaral place (links, redirects, local actions etc.)
+entity.contact.canonical:
+  path: '/admin/people/contact/{contact}'
+  defaults:
+  # Calls the view controller, defined in the annotation of the contact entity
+    _entity_view: 'contact'
+    _title: 'Contact View'
+  requirements:
+  # Calls the access controller of the entity, $operation 'view'
+    _entity_access: 'contact.view'
+
+entity.contact.collection:
+  path: '/admin/people/contact'
+  defaults:
+  # Calls the list controller, defined in the annotation of the contact entity.
+    _entity_list: 'contact'
+    _title: 'Contact List'
+  requirements:
+  # Checks for permission directly.
+    _permission: 'view contact entity'
+
+contacts.contact_add:
+  path: '/admin/people/contact/add'
+  defaults:
+  # Calls the form.add controller, defined in the contact entity.
+    _entity_form: contact.add
+    _title: 'Add Contact'
+  requirements:
+    _entity_create_access: 'contact'
+
+entity.contact.edit_form:
+  path: '/admin/people/contact/{contact}/edit'
+  defaults:
+  # Calls the form.edit controller, defined in the contact entity.
+    _entity_form: contact.edit
+    _title: 'Edit Contact'
+  requirements:
+    _entity_access: 'contact.edit'
+
+entity.contact.delete_form:
+  path: '/admin/people/contact/{contact}/delete'
+  defaults:
+    # Calls the form.delete controller, defined in the contact entity.
+    _entity_form: contact.delete
+    _title: 'Delete Contact'
+  requirements:
+    _entity_access: 'contact.delete'
+
+contacts.contact_settings:
+  path: 'admin/structure/contact'
+  defaults:
+    _form: '\Drupal\contacts\Form\ContactSettingsForm'
+    _title: 'Contact Settings'
+  requirements:
+    _permission: 'administer contact entity'
+
+contacts.contact:
+  path: 'contact'
+  defaults:
+    _controller: '\Drupal\contacts\Controller\ContactsController::contact'
+    _title: 'Contact'
+  requirements:
+    _access: 'TRUE'
