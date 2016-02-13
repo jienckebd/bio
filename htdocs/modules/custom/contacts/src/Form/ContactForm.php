@@ -41,7 +41,7 @@ class ContactForm extends ContentEntityForm {
     $form['actions']['submit']['#value'] = t('Message Me');
 
     $form['actions']['submit']['#ajax'] = array(
-      'callback' => array($this, 'processMessage'),
+      'callback' => array($this, 'ajaxCallback'),
       'wrapper' => 'contact-form-wrapper',
       'effect' => 'fade',
       'progress' => array(
@@ -53,7 +53,11 @@ class ContactForm extends ContentEntityForm {
     return $form;
   }
 
-  function processMessage($form, FormStateInterface $form_state) {
+  function ajaxCallback($form, FormStateInterface $form_state) {
+
+    if ($form_state->hasAnyErrors() == TRUE) {
+      return $form;
+    }
 
     $form_values = $form_state->getValues();
 

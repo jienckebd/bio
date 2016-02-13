@@ -1,5 +1,11 @@
 # Define the 'local' links for the module
 
+contact.contact_list:
+  title: Contact List
+  route_name: entity.contact.collection
+  base_route: entity.user.collection
+  weight: 90
+
 contact.settings_tab:
   route_name: contacts.contact_settings
   title: Settings

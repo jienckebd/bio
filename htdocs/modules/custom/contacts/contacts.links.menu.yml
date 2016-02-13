@@ -1,9 +1,10 @@
 # Define the menu links for this module
 
 entity.contact.collection:
-  title: 'Content Entity Example: Contacts Listing'
+  title: 'Contact List'
   route_name: entity.contact.collection
   description: 'List Contacts'
+  parent: entity.user.collection
   weight: 10
 contact.admin.structure.settings:
   title: Contact Settings

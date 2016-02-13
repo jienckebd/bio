@@ -29,6 +29,16 @@ class ContactListBuilder extends EntityListBuilder {
    */
   protected $urlGenerator;
 
+  protected function getEntityIds() {
+    $query = $this->getStorage()->getQuery()
+      ->sort($this->entityType->getKey('id'));
+
+    // Only add the pager if a limit is specified.
+    if ($this->limit) {
+      $query->pager($this->limit);
+    }
+    return $query->execute();
+  }
 
   /**
    * {@inheritdoc}
@@ -66,7 +76,7 @@ class ContactListBuilder extends EntityListBuilder {
    */
   public function render() {
     $build['description'] = array(
-      '#markup' => $this->t('Content Entity Example implements a Contacts model. These contacts are fieldable entities. You can manage the fields on the <a href="@adminlink">Contacts admin page</a>.', array(
+      '#markup' => $this->t('Update contact settings: <a href="@adminlink">Contact Settings</a>', array(
         '@adminlink' => $this->urlGenerator->generateFromRoute('contacts.contact_settings'),
       )),
     );
@@ -95,13 +105,20 @@ class ContactListBuilder extends EntityListBuilder {
    * {@inheritdoc}
    */
   public function buildRow(EntityInterface $entity) {
-    /* @var $entity \Drupal\contacts\Entity\Contact */
+
     $row['id'] = $entity->id();
-    $row['name'] = 'name';
-    $row['email'] = 'email';
-    $row['created'] = 'name';
-    $row['changed'] = 'email';
+
+    $name = $entity->get('field_name')->getValue();
+    $row['name'] = $name[0]['value'];
+
+    $email = $entity->get('field_email')->getValue();
+    $row['email'] = $email[0]['value'];
+
+    $row['created'] = format_date($entity->getCreatedTime());
+    $row['changed'] = format_date($entity->getChangedTime());
+
     return $row + parent::buildRow($entity);
+
   }
 
 }
