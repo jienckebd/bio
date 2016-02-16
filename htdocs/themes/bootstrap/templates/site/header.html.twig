@@ -24,7 +24,7 @@
 
     <div id="header-fixed" class="header-main">
       <div class="container">
-        <a href="/">
+        <a href="{{ url('<front>') }}">
           <div id="header-drupal" class="col-md-1">
             <div id="header-drupal-inner">
               <img src="/themes/bootstrap/img/logo/drupal.png" />
@@ -39,7 +39,7 @@
         <div id="header-menu" class="col-md-7">
           <div id="header-menu-inner">
             <div id="header-icons">
-              <a id="header-icon-contact" href="/contact" title="Contact">
+              <a id="header-icon-contact" href="{{ url('contacts.contact') }}" title="Contact">
                 <span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>
               </a>
               <a id="header-icon-top" class="scroll-link" href="#top" title="Back to top">
@@ -66,16 +66,17 @@
       <div id="header-secondary" class="row">
         <div id="header-secondary-inner">
           <div id="header-secondary-left">
-            <div id="header-lang">
-              <a href="" id="header-lang-us" title="View this site in English"><img src="/themes/bootstrap/img/flags/en.png"></a>
-              <a href="" id="header-lang-es" title="View this site in Spanish"><img src="/themes/bootstrap/img/flags/es.png"></a>
-              <a href="" id="header-lang-de" title="View this site in German"><img src="/themes/bootstrap/img/flags/de.png"></a>
+            <div id="header-lang-toggle" class="title-tooltip" title="You are currently viewing this site in {{ current_language }}"><span class="glyphicon glyphicon-globe" aria-hidden="true"></span> {{ current_language }} <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span></div>
+            <div id="header-lang-wrapper">
+                {{ language_links }}
             </div>
           </div>
           <div id="header-secondary-right">
             <div id="header-secondary-links">
-              <a href="/about">About Me</a>
-              <a href="/contact">Contact</a>
+              <a href="{{ url('site.about') }}">
+                {{ 'About Me'|t }}
+              </a>
+              <a href="{{ url('contacts.contact') }}">{% trans %}Contact{% endtrans %}</a>
             </div>
             <div id="header-secondary-search">
               {{ search_form }}
@@ -86,7 +87,7 @@
 
       <div id="header-primary" class="row header-main">
         <div id="header-logo-wrapper">
-          <a href="/" id="header-logo-link">
+          <a href="{{ url('<front>') }}" id="header-logo-link">
             <div id="header-drupal">
               <div id="header-drupal-inner">
                 <img src="/themes/bootstrap/img/logo/drupal.png" />
@@ -95,7 +96,7 @@
             <div id="header-logo">
               <div id="header-logo-inner">
                 <div id="header-logo-name">Bryan Jiencke</div>
-                <div id="header-logo-title">Drupal Developer</div>
+                <div id="header-logo-title">{{ 'Drupal Developer'|t }}</div>
               </div>
             </div>
           </a>

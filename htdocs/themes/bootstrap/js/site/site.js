@@ -1,13 +1,13 @@
 (function ($, Drupal, drupalSettings) {
 
   $(document).ajaxStart(function() {
-    $('#ajax-spinner').addClass('ajax-active');
-    $('#ajax-overlay').addClass('ajax-active');
+    $('#ajax-spinner').addClass('active');
+    $('#ajax-overlay').addClass('active');
   });
 
   $(document).ajaxComplete(function() {
-    $('#ajax-spinner').removeClass('ajax-active');
-    $('#ajax-overlay').removeClass('ajax-active');
+    $('#ajax-spinner').removeClass('active');
+    $('#ajax-overlay').removeClass('active');
     $('.cycle-slideshow').cycle();
   });
     "use strict";
@@ -23,7 +23,7 @@
              //$('#imagemodal').modal('show'); // imagemodal is the id attribute assigned to the bootstrap modal, then i use the show function
           });
 
-          $('a').attr('data-toggle', 'tooltip').attr('data-placement', 'bottom');
+          $('a, .title-tooltip').attr('data-toggle', 'tooltip').attr('data-placement', 'bottom');
 
             $('a.scroll-link').click(function() {
                 var jump = $(this).attr('href');
@@ -46,6 +46,11 @@
             }
 
           });
+
+            $('#header-lang-toggle').click(function() {
+              $('#header-lang-wrapper').toggleClass('active');
+              $('#header-lang-toggle .glyphicon').toggleClass('glyphicon-chevron-right').toggleClass('glyphicon-chevron-left');
+            });
 
             $('#header-icon-search').click(function() {
               $('#header-fixed #header-hidden-search').toggleClass('header-search-menu-active');

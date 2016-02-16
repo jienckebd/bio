@@ -14,14 +14,14 @@
 # ("description").
 
 # Access to this path is not restricted. This is notated as _access: 'TRUE'.
-site_landing:
+site.landing:
   path: 'landing'
   defaults:
     _controller: '\Drupal\site\Controller\SiteController::landing'
   requirements:
     _access: 'TRUE'
 
-site_project:
+site.project:
   path: 'project'
   defaults:
     _controller: '\Drupal\site\Controller\SiteController::project'
@@ -29,7 +29,7 @@ site_project:
   requirements:
     _access: 'TRUE'
 
-site_snippet:
+site.snippet:
   path: 'snippet'
   defaults:
     _controller: '\Drupal\site\Controller\SiteController::snippet'
@@ -37,7 +37,7 @@ site_snippet:
   requirements:
     _access: 'TRUE'
 
-site_about:
+site.about:
   path: 'about'
   defaults:
     _controller: '\Drupal\site\Controller\SiteController::about'

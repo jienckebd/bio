@@ -10,6 +10,8 @@ use Drupal\core\Entity;
 use Drupal\Core\Url;
 use Symfony\Component\HttpFoundation\Request;
 use Drupal\Core\Routing\AdminContext;
+use Drupal\Core\Language\LanguageManagerInterface;
+use Drupal\Core\GeneratedLink;
 
 module_load_include('inc', 'site', 'inc/string_manipulation');
 module_load_include('inc', 'site', 'inc/common');
@@ -179,4 +181,8 @@ function site_form_alter(&$form, \Drupal\Core\Form\FormStateInterface $form_stat
   if (!empty($form['actions']['submit'])) {
     $form['actions']['submit']['#attributes']['class'][] = 'btn-primary';
   }
+}
+
+function site_url($path) {
+
 }

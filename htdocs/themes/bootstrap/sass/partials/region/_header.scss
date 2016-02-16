@@ -4,15 +4,52 @@ header {
   #header-secondary {
     padding-top: 8px;
     margin-bottom: -18px;
+    position: relative;
     #header-secondary-left {
       float: left;
-      #header-lang {
-        padding-right: 20px;
-        border-right: 1px dotted #AAAAAA;
-        img {
-          border: 1px solid #AAAAAA;
-          padding: 1px;
-          border-radius: 2px;
+      #header-lang-toggle {
+        font-family: $heading-font-family;
+        font-size: 14px;
+        cursor: pointer;
+        @include inline-block();
+        padding: 7px 10px;
+        position: relative;
+        z-index: 99999;
+        @include transition(all .25s ease 0s);
+        &:hover {
+          color: $blue;
+        }
+        .glyphicon-globe {
+          padding-right: 5px;
+          vertical-align: -1px;
+        }
+      }
+      #header-lang-wrapper {
+        position: absolute;
+        z-index: 999;
+        top: 10px;
+        left: 0px;
+        font-size: 14px;
+        @include transition(all .25s ease 0s);
+        @include opacity(0);
+        visibility: hidden;
+        &.active {
+          left: 95px;
+          visibility: visible;
+          @include opacity(1);
+        }
+        li {
+          margin-left: 0px;
+          list-style: none;
+          @include inline-block();
+        }
+        a {
+          @include inline-block();
+          padding: 5px 15px;
+          font-family: $heading-font-family;
+          &:hover {
+            color: $blue;
+          }
         }
       }
     }
@@ -58,7 +95,6 @@ header {
         padding-right: 15px;
         img {
           max-width: 70px;
-          margin-left: -30px;
         }
       }
     }

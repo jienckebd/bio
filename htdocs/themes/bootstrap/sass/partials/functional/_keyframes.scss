@@ -1,0 +1,47 @@
+.spin-360 {
+  @include animation(spin 2000ms infinite linear);
+}
+
+@-webkit-keyframes spin {
+  0% {
+    @include transform(rotate(0deg));
+  }
+  100% {
+    @include transform(rotate(359deg));
+  }
+}
+
+@keyframes spin {
+  0% {
+    @include transform(rotate(0deg));
+  }
+  100% {
+    @include transform(rotate(359deg));
+  }
+}
+
+/* Media Queries */
+
+/* hi-res laptops and desktops */
+@media (max-width:1281px) {
+}
+
+/* big landscape tablets, laptops, and desktops */
+@media (max-width:1025px) {
+}
+
+/* tablet, landscape iPad, lo-res laptops ands desktops */
+@media (max-width:961px) {
+}
+
+/* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */
+@media (max-width:768px) {
+}
+
+/* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */
+@media (max-width:481px) {
+}
+
+/* smartphones, iPhone, portrait 480x320 phones */
+@media (max-width:320px) {
+}

@@ -63,8 +63,13 @@
 #}
 {% set container = theme.settings.fluid_container ? 'container-fluid' : 'container' %}
 {# Navbar #}
+
+<div id="ajax-spinner"><span class="glyphicon glyphicon-refresh spin-360" aria-hidden="true"></span></div>
+<div id="ajax-overlay"></div>
+
 <div id="top"></div>
 {{ header }}
+
 
 {# Main #}
 {% block main %}

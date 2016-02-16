@@ -1,4 +1,8 @@
 <?php
+
+use Drupal\Core\Language\LanguageManagerInterface;
+use Drupal\Core\Url;
+
 /**
  * @file
  * The primary PHP file for the Drupal Bootstrap base theme.
@@ -169,6 +173,28 @@ function bootstrap_preprocess_header(&$variables, $hook, $info) {
   $menu_html = drupal_render($menu);
 
   $variables['menu'] = $menu_html;
+
+  // languages
+  $languageManager = \Drupal::languageManager();
+  $links = $languageManager->getLanguageSwitchLinks('language_interface', Url::fromRoute('<current>'));
+
+
+  $language_links = $build = array(
+    '#theme' => 'links__language_block',
+    '#links' => $links->links,
+    '#attributes' => array(
+      'class' => array(
+        "language-switcher-{$links->method_id}",
+      ),
+    ),
+    '#set_active_class' => TRUE,
+  );
+
+  $current_language_id = \Drupal::languageManager()->getCurrentLanguage()->getId();
+  unset($language_links['#links'][$current_language_id]);
+
+  $variables['language_links'] = drupal_render($language_links);
+  $variables['current_language'] = \Drupal::languageManager()->getCurrentLanguage()->getName();
 }
 
 
@@ -222,7 +248,7 @@ function bootstrap_preprocess_landing(&$variables) {
     $url = $node->get('field_url')->getValue();
     $slide['url'] = $url[0]['uri'];
 
-    $slide['path'] = 'node/' . $node->id();
+    $slide['path'] = site_url('node/' . $node->id());
 
     $slides[] = $slide;
   }
