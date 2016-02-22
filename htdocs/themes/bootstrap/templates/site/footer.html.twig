@@ -3,16 +3,12 @@
     <div id="footer-name-menu" class="row">
       <div id="footer-menu" class="col-md-9">
         <div id="footer-menu-inner">
-          <ul>
-            <li><a href="/">Home</a></li>
-            <li><a href="/project">Projects</a></li>
-            <li><a href="/snippet">Snippets</a></li>
-          </ul>
+          {{ menu }}
         </div>
       </div>
       <div id="footer-name-title" class="col-md-3">
         <div id="footer-name">Bryan Jiencke</div>
-        <div id="footer-title">Drupal Developer</div>
+        <div id="footer-title">{% trans %}Drupal Developer{% endtrans %}</div>
       </div>
     </div>
     <div id="footer-copyright" class="row">

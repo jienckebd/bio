@@ -178,7 +178,6 @@ function bootstrap_preprocess_header(&$variables, $hook, $info) {
   $languageManager = \Drupal::languageManager();
   $links = $languageManager->getLanguageSwitchLinks('language_interface', Url::fromRoute('<current>'));
 
-
   $language_links = $build = array(
     '#theme' => 'links__language_block',
     '#links' => $links->links,
@@ -194,13 +193,39 @@ function bootstrap_preprocess_header(&$variables, $hook, $info) {
   unset($language_links['#links'][$current_language_id]);
 
   $variables['language_links'] = drupal_render($language_links);
-  $variables['current_language'] = \Drupal::languageManager()->getCurrentLanguage()->getName();
+  $variables['current_language'] = t(\Drupal::languageManager()->getCurrentLanguage()->getName());
 }
 
 
 function bootstrap_preprocess_footer(&$variables, $hook, $info) {
   $search_form = \Drupal::formBuilder()->getForm('Drupal\site\Form\SearchForm');
   $variables['search_form'] = drupal_render($search_form);
+
+  $menu_tree = \Drupal::menuTree();
+  $menu_name = 'main';
+
+  // Build the typical default set of menu tree parameters.
+  $parameters = $menu_tree->getCurrentRouteMenuTreeParameters($menu_name);
+
+  // Load the tree based on this set of parameters.
+  $tree = $menu_tree->load($menu_name, $parameters);
+
+  // Transform the tree using the manipulators you want.
+  $manipulators = array(
+    // Only show links that are accessible for the current user.
+    array('callable' => 'menu.default_tree_manipulators:checkAccess'),
+    // Use the default sorting of menu links.
+    array('callable' => 'menu.default_tree_manipulators:generateIndexAndSort'),
+  );
+  $tree = $menu_tree->transform($tree, $manipulators);
+
+  // Finally, build a renderable array from the transformed tree.
+  $menu = $menu_tree->build($tree);
+
+  $menu_html = drupal_render($menu);
+
+  $variables['menu'] = $menu_html;
+
 }
 
 function bootstrap_preprocess_landing(&$variables) {
@@ -248,7 +273,12 @@ function bootstrap_preprocess_landing(&$variables) {
     $url = $node->get('field_url')->getValue();
     $slide['url'] = $url[0]['uri'];
 
-    $slide['path'] = site_url('node/' . $node->id());
+    $node_path = $node->urlInfo()
+    ->setOption('language', $language)
+    ->setAbsolute()
+    ->toString();
+
+    $slide['path'] = $node_path;
 
     $slides[] = $slide;
   }
@@ -263,7 +293,13 @@ function bootstrap_preprocess_landing(&$variables) {
 
 function bootstrap_preprocess_node(&$variables) {
   $node = $variables['elements']['#node'];
-  $variables['url'] = $node->url('canonical');
+
+  $node_path = $node->urlInfo()
+    ->setOption('language', $language)
+    ->setAbsolute()
+    ->toString();
+
+  $variables['url'] = $node_path;
 
   $node = $variables['node'];
 

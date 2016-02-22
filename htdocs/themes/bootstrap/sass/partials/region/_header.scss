@@ -132,13 +132,17 @@ header {
           a {
             @include transition(all .25s ease 0s);
             font-family: $heading-font-family;
-            font-size: 20px;
+            font-size: 18px;
             color: #343434;
             padding: 10px 20px;
             @include inline-block();
+            border-top: 1px solid #FFFFFF;
+            border-bottom: 1px solid #FFFFFF;
             &:hover, &:active, &:focus {
               background-color: transparent;
               color: $blue;
+              border-top: 1px dotted $blue;
+              border-bottom: 1px dotted $blue;
             }
           }
         }
