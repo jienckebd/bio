@@ -242,6 +242,8 @@ function bootstrap_preprocess_landing(&$variables) {
     $slide = array();
     $node = node_load($nid);
 
+    $node = \Drupal::entityManager()->getTranslationFromContext($node);
+
     // title
     $slide['title'] = $node->getTitle();
 

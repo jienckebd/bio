@@ -66,7 +66,7 @@ class SearchForm extends FormBase {
       '#title' => t('Search'),
       '#title_display' => 'invisible',
       '#required' => FALSE,
-      '#attributes' => array('placeholder' => 'Search...'),
+      '#attributes' => array('placeholder' => t('Search') . '...'),
       '#prefix' => '<i class="fa fa-search"></i>',
     );
 
