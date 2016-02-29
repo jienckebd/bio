@@ -125,6 +125,7 @@
             {{ content.body }}
             </div>
 
+            {% if ref %}
             <div class="snippet-refs field">
               <div class="field-label">References</div>
               <ol>
@@ -136,6 +137,11 @@
               {% endfor %}
               </ol>
             </div>
+            {% endif %}
+
+            {% if content.field_drush_command_example %}
+              {{ content.field_drush_command_example }}
+            {% endif %}
 
           </div>
 
@@ -172,7 +178,7 @@
         <div id="code-wrapper-{{ code_part.key }}-code" class="code-wrapper">
           <pre class="line-numbers">
           <code class="language-{{ code_part.language }}">
-          {{ code_part.value }}
+{{ code_part.value }}
           </code>
           </pre>
         </div>

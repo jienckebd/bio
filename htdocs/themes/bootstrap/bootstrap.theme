@@ -347,7 +347,9 @@ function bootstrap_preprocess_node(&$variables) {
       $refs[] = array('uri' => $data['uri'], 'title' => $data['title'], 'key' => $key);
     }
 
-    $variables['refs'] = $refs;
+    if (!empty($refs)) {
+      $variables['refs'] = $refs;
+    }
 
     $code = $node->get('field_code')->getValue();
     $code_parts = array();

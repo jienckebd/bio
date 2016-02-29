@@ -241,11 +241,11 @@ section#page-heading h1 {
 }
 /* line 185, ../sass/partials/_layout.scss */
 .colorset-dark a {
-  color: #0091d5;
+  color: #FFFFFF;
 }
 /* line 187, ../sass/partials/_layout.scss */
 .colorset-dark a:hover {
-  color: #FFFFFF;
+  color: #0091d5;
 }
 
 /* line 193, ../sass/partials/_layout.scss */
@@ -1376,10 +1376,20 @@ article.node--type-snippet.node--view-mode-full section#snippet-code, article.no
   padding-top: 100px;
 }
 /* line 65, ../sass/partials/node/_snippet.scss */
+article.node--type-snippet.node--view-mode-full section#snippet-code .code-summary {
+  padding: 1px 10px 20px;
+  box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.6);
+}
+/* line 69, ../sass/partials/node/_snippet.scss */
+article.node--type-snippet.node--view-mode-full section#snippet-code .section-name h2 {
+  font-size: 28px;
+  font-family: Montserrat;
+}
+/* line 73, ../sass/partials/node/_snippet.scss */
 article.node--type-snippet.node--view-mode-full section#snippet-code .line-numbers code {
   margin-left: -80px;
 }
-/* line 69, ../sass/partials/node/_snippet.scss */
+/* line 77, ../sass/partials/node/_snippet.scss */
 article.node--type-snippet.node--view-mode-full section .snippet-spec {
   margin-bottom: 20px;
 }
@@ -1389,23 +1399,23 @@ article.node--type-snippet.node--view-mode-full section .snippet-spec {
 /* big landscape tablets, laptops, and desktops */
 /* tablet, landscape iPad, lo-res laptops ands desktops */
 @media (max-width: 988px) {
-  /* line 88, ../sass/partials/node/_snippet.scss */
+  /* line 96, ../sass/partials/node/_snippet.scss */
   #landing-picture-inner {
     text-align: center;
   }
-  /* line 90, ../sass/partials/node/_snippet.scss */
+  /* line 98, ../sass/partials/node/_snippet.scss */
   #landing-picture-inner img {
     margin-bottom: -20px;
   }
 
-  /* line 94, ../sass/partials/node/_snippet.scss */
+  /* line 102, ../sass/partials/node/_snippet.scss */
   body.path-frontpage #landing-picture-bio #landing-bio-inner {
     margin-left: 0px;
   }
 }
 /* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */
 @media (max-width: 768px) {
-  /* line 101, ../sass/partials/node/_snippet.scss */
+  /* line 109, ../sass/partials/node/_snippet.scss */
   article.node--type-snippet.node--view-mode-teaser {
     margin-left: 0px;
     margin-right: 0px;
