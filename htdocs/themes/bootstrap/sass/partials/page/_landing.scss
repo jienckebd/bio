@@ -45,13 +45,14 @@ body.path-frontpage {
         background-attachment: fixed;
         @include background-size(cover);
         &::after {
-          background: rgba(0, 0, 0, .4);
+          background: url("/themes/bootstrap/img/pattern/footer_lodyas.png");
           position: absolute;
           top: 0;
           left: 0;
           right: 0;
           bottom: 0;
           content: "";
+          @include opacity(.8);
         }
         .slide-caption {
           background: rgba(20, 20, 20, 0.7) none repeat scroll 0 0;

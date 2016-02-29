@@ -106,7 +106,7 @@
               <div class="field-label">Sections</div>
               <ol>
               {% for code_part in code_parts %}
-              <li><a href="#code-wrapper-{{ code_part.key }}-summary" class="scroll-link">{{ code_part.section_name }}</a></li>
+              <li><a href="#code-wrapper-{{ code_part.key }}-summary" class="scroll-link">{{ code_part.section_name }} <span class="glyphicon glyphicon-circle-arrow-down" aria-hidden="true"></span></a></li>
               {% endfor %}
               </ol>
             </div>

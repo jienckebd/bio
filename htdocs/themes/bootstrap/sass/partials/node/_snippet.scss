@@ -57,6 +57,13 @@ article.node--type-snippet {
       padding: 20px 0px;
       &#snippet-top {
         padding-bottom: 40px;
+        .field--name-field-drush-command-example .field--item {
+          background: #484848;
+          color: #FFFFFF;
+          padding: 4px;
+          font-family: courier;
+          font-size: 16px;
+        }
       }
       &#snippet-code, &#snippet-comments {
         padding-top: 100px;
