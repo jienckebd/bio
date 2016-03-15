@@ -499,7 +499,7 @@ header #header-secondary #header-secondary-right #header-secondary-search .input
   border-top: none;
   border-bottom: 1px dotted #AAAAAA;
   border-left: 1px dotted #AAAAAA;
-  height: 45px;
+  height: 44px;
 }
 /* line 85, ../sass/partials/region/_header.scss */
 header .header-main {
