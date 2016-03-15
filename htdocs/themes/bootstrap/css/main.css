@@ -497,8 +497,8 @@ header #header-secondary #header-secondary-right #header-secondary-search .input
 /* line 75, ../sass/partials/region/_header.scss */
 header #header-secondary #header-secondary-right #header-secondary-search .input-group .form-control {
   border-top: none;
-  border-bottom: 1px dotted #AAAAAA;
   border-left: 1px dotted #AAAAAA;
+  border-bottom: none;
   height: 44px;
 }
 /* line 85, ../sass/partials/region/_header.scss */
