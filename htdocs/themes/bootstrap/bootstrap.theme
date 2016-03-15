@@ -146,7 +146,7 @@ function _bootstrap_preprocess_html(&$variables, $hook, $info) {
 }
 
 function bootstrap_preprocess_header(&$variables, $hook, $info) {
-  $search_form = \Drupal::formBuilder()->getForm('Drupal\site\Form\SearchForm');
+  $search_form = \Drupal::formBuilder()->getForm('Drupal\search\Form\SearchBlockForm');
   $variables['search_form'] = drupal_render($search_form);
 
   $menu_tree = \Drupal::menuTree();

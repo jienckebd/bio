@@ -23,7 +23,7 @@
              //$('#imagemodal').modal('show'); // imagemodal is the id attribute assigned to the bootstrap modal, then i use the show function
           });
 
-          $('a, .title-tooltip').attr('data-toggle', 'tooltip').attr('data-placement', 'bottom');
+          $('header a, .main-container a, .title-tooltip').attr('data-toggle', 'tooltip').attr('data-placement', 'bottom');
 
             $('a.scroll-link').click(function() {
                 var jump = $(this).attr('href');

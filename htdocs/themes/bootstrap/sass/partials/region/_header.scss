@@ -76,12 +76,14 @@ header {
             border-top: none;
             border-bottom: 1px dotted #AAAAAA;
             border-left: 1px dotted #AAAAAA;
+            height: 45px;
           }
         }
       }
     }
   }
   .header-main {
+    margin-top: 2px;
     border-top: 1px dotted #AAAAAA;
     position: relative;
     #header-drupal {
@@ -98,16 +100,26 @@ header {
         }
       }
     }
-    #header-logo-inner {
-      padding-top: 15px;
-      #header-logo-name {
-        font-family: $heading-font-family;
-        font-size: 34px;
-        color: #484848;
+    #header-logo-wrapper {
+      max-width: 400px;
+      &:hover {
+        #header-logo-name {
+          color: $blue !important;
+        }
       }
-      #header-logo-title {
-        font-size: 24px;
-        color: $blue;
+      #header-logo-inner {
+        padding-top: 15px;
+        #header-logo-name {
+          @include transition(all .5s ease 0s);
+          font-family: $heading-font-family;
+          font-size: 34px;
+          color: #484848;
+        }
+        #header-logo-title {
+          font-size: 24px;
+          color: $blue;
+          margin-left: 2px;
+        }
       }
     }
     #header-icons {
@@ -188,7 +200,10 @@ header {
       #header-logo-inner {
         padding-top: 5px;
         #header-logo-name {
+          color: #484848;
+          font-family: Montserrat;
           font-size: 26px;
+          margin-left: -18px;
           margin-top: 2px;
         }
       }
