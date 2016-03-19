@@ -16,6 +16,11 @@ html body {
   }
 }
 
+.kint {
+  margin-top: 100px;
+  margin-bottom: 100px;
+}
+
 a {
   @include transition(color .25s ease 0s);
   outline: 0 !important;
