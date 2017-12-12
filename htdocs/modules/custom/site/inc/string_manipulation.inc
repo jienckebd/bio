@@ -1,26 +1,26 @@
 <?php
 
-function after($this, $inthat) {
-  return substr($inthat, strpos($inthat,$this)+strlen($this));
+function after($input, $inthat) {
+  return substr($inthat, strpos($inthat,$input)+strlen($input));
 }
 
-function after_last($this, $inthat) {
-  if (!is_bool(strrevpos($inthat, $this)))
-  return substr($inthat, strrevpos($inthat, $this)+strlen($this));
+function after_last($input, $inthat) {
+  if (!is_bool(strrevpos($inthat, $input)))
+  return substr($inthat, strrevpos($inthat, $input)+strlen($input));
 }
 
-function before($this, $inthat) {
-  return substr($inthat, 0, strpos($inthat, $this));
+function before($input, $inthat) {
+  return substr($inthat, 0, strpos($inthat, $input));
 }
 
-function before_last($this, $inthat) {
-  return substr($inthat, 0, strrevpos($inthat, $this));
+function before_last($input, $inthat) {
+  return substr($inthat, 0, strrevpos($inthat, $input));
 }
 
-function between($this, $that, $inthat) {
-  return before($that, after($this, $inthat));
+function between($input, $that, $inthat) {
+  return before($that, after($input, $inthat));
 }
 
-function between_last($this, $that, $inthat) {
-  return after_last($this, before_last($that, $inthat));
+function between_last($input, $that, $inthat) {
+  return after_last($input, before_last($that, $inthat));
 }

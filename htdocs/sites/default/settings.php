@@ -719,19 +719,8 @@ $settings['container_yamls'][] = __DIR__ . '/services.yml';
 
 $databases['default']['default'] = array (
   'database' => 'bio',
-  'username' => 'bio',
-  'password' => 'aFfWEmjE66*739',
-  'prefix' => '',
-  'host' => 'localhost',
-  'port' => '3306',
-  'namespace' => 'Drupal\\Core\\Database\\Driver\\mysql',
-  'driver' => 'mysql',
-);
-
-$databases['old']['default'] = array (
-  'database' => 'old_bio',
-  'username' => 'old_bio',
-  'password' => '2gbfjnvwQfuk%$',
+  'username' => 'root',
+  'password' => '',
   'prefix' => '',
   'host' => 'localhost',
   'port' => '3306',

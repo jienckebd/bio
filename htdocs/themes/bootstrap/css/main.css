@@ -1060,14 +1060,14 @@ form .panel-heading .panel-title {
 /* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */
 /* portrait e-readers (Nook/Kindle), smaller tablets @ 600 or @ 640 wide. */
 /* smartphones, iPhone, portrait 480x320 phones */
-/* line 3, ../sass/partials/page/_landing.scss */
-body.path-frontpage #landing-picture-bio {
+/* line 1, ../sass/partials/page/_landing.scss */
+#landing-picture-bio {
   background-color: #0091d5;
   color: #FFFFFF;
   padding: 50px 0px;
 }
-/* line 8, ../sass/partials/page/_landing.scss */
-body.path-frontpage #landing-picture-bio #landing-picture img {
+/* line 6, ../sass/partials/page/_landing.scss */
+#landing-picture-bio #landing-picture img {
   -moz-border-radius: 50%;
   -webkit-border-radius: 50%;
   border-radius: 50%;
@@ -1080,8 +1080,8 @@ body.path-frontpage #landing-picture-bio #landing-picture img {
   max-width: 100%;
   height: auto;
 }
-/* line 18, ../sass/partials/page/_landing.scss */
-body.path-frontpage #landing-picture-bio #landing-bio-inner {
+/* line 16, ../sass/partials/page/_landing.scss */
+#landing-picture-bio #landing-bio-inner {
   -moz-border-radius: 3px;
   -webkit-border-radius: 3px;
   border-radius: 3px;
@@ -1092,30 +1092,25 @@ body.path-frontpage #landing-picture-bio #landing-bio-inner {
   padding: 40px;
   text-align: left;
   color: #484848;
-  margin-left: -150px;
 }
+
 /* line 26, ../sass/partials/page/_landing.scss */
-body.path-frontpage #landing-picture-bio #landing-bio-inner #landing-bio-employee {
-  text-align: center;
-  margin-top: 10px;
-}
-/* line 33, ../sass/partials/page/_landing.scss */
-body.path-frontpage #landing-project {
+#landing-project {
   clear: both;
   background: #343434;
 }
-/* line 36, ../sass/partials/page/_landing.scss */
-body.path-frontpage #landing-project .cycle-slideshow {
+/* line 29, ../sass/partials/page/_landing.scss */
+#landing-project .cycle-slideshow {
   position: relative;
 }
-/* line 38, ../sass/partials/page/_landing.scss */
-body.path-frontpage #landing-project .cycle-slideshow:hover .cycle-slide .slide-caption {
+/* line 31, ../sass/partials/page/_landing.scss */
+#landing-project .cycle-slideshow:hover .cycle-slide .slide-caption {
   filter: progid:DXImageTransform.Microsoft.Alpha(enabled=false);
   opacity: 1;
   margin-left: 0px;
 }
-/* line 42, ../sass/partials/page/_landing.scss */
-body.path-frontpage #landing-project .cycle-slideshow .cycle-slide {
+/* line 35, ../sass/partials/page/_landing.scss */
+#landing-project .cycle-slideshow .cycle-slide {
   width: 100%;
   height: 500px;
   background-attachment: fixed;
@@ -1124,8 +1119,8 @@ body.path-frontpage #landing-project .cycle-slideshow .cycle-slide {
   -webkit-background-size: cover;
   background-size: cover;
 }
-/* line 47, ../sass/partials/page/_landing.scss */
-body.path-frontpage #landing-project .cycle-slideshow .cycle-slide::after {
+/* line 40, ../sass/partials/page/_landing.scss */
+#landing-project .cycle-slideshow .cycle-slide::after {
   background: url("/themes/bootstrap/img/pattern/footer_lodyas.png");
   position: absolute;
   top: 0;
@@ -1136,8 +1131,8 @@ body.path-frontpage #landing-project .cycle-slideshow .cycle-slide::after {
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=80);
   opacity: 0.8;
 }
-/* line 57, ../sass/partials/page/_landing.scss */
-body.path-frontpage #landing-project .cycle-slideshow .cycle-slide .slide-caption {
+/* line 50, ../sass/partials/page/_landing.scss */
+#landing-project .cycle-slideshow .cycle-slide .slide-caption {
   background: rgba(20, 20, 20, 0.7) none repeat scroll 0 0;
   color: #ffffff;
   filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
@@ -1157,21 +1152,21 @@ body.path-frontpage #landing-project .cycle-slideshow .cycle-slide .slide-captio
   width: 400px;
   margin-left: -400px;
 }
-/* line 71, ../sass/partials/page/_landing.scss */
-body.path-frontpage #landing-project .cycle-slideshow .cycle-slide .slide-caption .slide-caption-body {
+/* line 64, ../sass/partials/page/_landing.scss */
+#landing-project .cycle-slideshow .cycle-slide .slide-caption .slide-caption-body {
   margin: 20px auto;
 }
-/* line 74, ../sass/partials/page/_landing.scss */
-body.path-frontpage #landing-project .cycle-slideshow .cycle-slide .slide-caption .slide-legal {
+/* line 67, ../sass/partials/page/_landing.scss */
+#landing-project .cycle-slideshow .cycle-slide .slide-caption .slide-legal {
   color: #DDDDDD;
   font-size: 14px;
 }
-/* line 78, ../sass/partials/page/_landing.scss */
-body.path-frontpage #landing-project .cycle-slideshow .cycle-slide .slide-caption .slide-buttons {
+/* line 71, ../sass/partials/page/_landing.scss */
+#landing-project .cycle-slideshow .cycle-slide .slide-caption .slide-buttons {
   margin-top: 20px;
 }
-/* line 83, ../sass/partials/page/_landing.scss */
-body.path-frontpage #landing-project .cycle-slideshow .cycle-pager {
+/* line 76, ../sass/partials/page/_landing.scss */
+#landing-project .cycle-slideshow .cycle-pager {
   width: 100%;
   text-align: right;
   position: absolute;
@@ -1179,23 +1174,57 @@ body.path-frontpage #landing-project .cycle-slideshow .cycle-pager {
   z-index: 995;
   right: 30px;
 }
-/* line 90, ../sass/partials/page/_landing.scss */
-body.path-frontpage #landing-project .cycle-slideshow .cycle-pager span {
+/* line 83, ../sass/partials/page/_landing.scss */
+#landing-project .cycle-slideshow .cycle-pager span {
   color: #FFFFFF;
   font-size: 90px;
   cursor: pointer;
 }
-/* line 94, ../sass/partials/page/_landing.scss */
-body.path-frontpage #landing-project .cycle-slideshow .cycle-pager span:hover, body.path-frontpage #landing-project .cycle-slideshow .cycle-pager span.cycle-pager-active {
+/* line 87, ../sass/partials/page/_landing.scss */
+#landing-project .cycle-slideshow .cycle-pager span:hover, #landing-project .cycle-slideshow .cycle-pager span.cycle-pager-active {
   color: #0091d5;
 }
-/* line 102, ../sass/partials/page/_landing.scss */
-body.path-frontpage #landing-snippet {
+
+/* line 95, ../sass/partials/page/_landing.scss */
+#landing-snippet {
   clear: both;
   padding: 90px 0px 60px;
   background-color: #343434;
   position: relative;
   z-index: 1;
+}
+
+/* line 103, ../sass/partials/page/_landing.scss */
+#landing-picture-bio-inner {
+  position: relative;
+}
+
+/* line 107, ../sass/partials/page/_landing.scss */
+#landing-picture {
+  position: absolute;
+  right: 0;
+  width: 220px;
+  top: -30px;
+}
+@media (max-width: 1024px) {
+  /* line 107, ../sass/partials/page/_landing.scss */
+  #landing-picture {
+    right: -30px;
+    width: 180px;
+    top: -30px;
+  }
+}
+@media (max-width: 768px) {
+  /* line 107, ../sass/partials/page/_landing.scss */
+  #landing-picture {
+    display: none;
+  }
+}
+
+/* line 124, ../sass/partials/page/_landing.scss */
+article#about {
+  margin-top: -20px;
+  padding-bottom: 40px;
 }
 
 /* Media Queries */
@@ -1204,11 +1233,11 @@ body.path-frontpage #landing-snippet {
 /* tablet, landscape iPad, lo-res laptops ands desktops */
 /* portrait tablets, portrait iPad, landscape e-readers, landscape 800x480 or 854x480 phones */
 @media (max-width: 768px) {
-  /* line 127, ../sass/partials/page/_landing.scss */
+  /* line 145, ../sass/partials/page/_landing.scss */
   body.path-frontpage #landing-project .cycle-slideshow .cycle-slide {
     background-attachment: scroll;
   }
-  /* line 129, ../sass/partials/page/_landing.scss */
+  /* line 147, ../sass/partials/page/_landing.scss */
   body.path-frontpage #landing-project .cycle-slideshow .cycle-slide .slide-caption {
     width: 100%;
     margin-left: 0px;
@@ -1216,17 +1245,17 @@ body.path-frontpage #landing-snippet {
     opacity: 1;
     padding: 105px 10px 40px;
   }
-  /* line 134, ../sass/partials/page/_landing.scss */
+  /* line 152, ../sass/partials/page/_landing.scss */
   body.path-frontpage #landing-project .cycle-slideshow .cycle-slide .slide-caption img {
     max-height: 100px;
   }
 
-  /* line 139, ../sass/partials/page/_landing.scss */
+  /* line 157, ../sass/partials/page/_landing.scss */
   body.path-frontpage #landing-picture-bio #landing-picture {
     margin: 0px 35px;
   }
 
-  /* line 142, ../sass/partials/page/_landing.scss */
+  /* line 160, ../sass/partials/page/_landing.scss */
   body.path-frontpage #landing-picture-bio #landing-bio-inner {
     padding: 40px 20px;
     margin: 0px auto !important;
@@ -1234,7 +1263,7 @@ body.path-frontpage #landing-snippet {
     max-width: 100%;
   }
 
-  /* line 148, ../sass/partials/page/_landing.scss */
+  /* line 166, ../sass/partials/page/_landing.scss */
   body.path-frontpage #landing-picture-bio {
     max-width: 100%;
     background-color: #0091d5;

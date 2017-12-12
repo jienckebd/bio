@@ -41,27 +41,14 @@
 
 <section id="landing-picture-bio" class="row">
   <div id="landing-picture-bio-inner" class="container">
-    <div id="landing-picture" class="col-md-6">
+    <div id="landing-picture">
       <div id="landing-picture-inner">
         <img src="/themes/bootstrap/img/me.jpg" />
       </div>
     </div>
-    <div id="landing-bio" class="col-md-6">
+    <div id="landing-bio">
       <div id="landing-bio-inner">
-        <div id="landing-bio-copy">
-          <p>
-            {% trans %}I'm a Drupal developer with experience in versions 6, 7, and 8 located in Massachusetts. I can work with both back end/functionality and front end/design, but most of my experience is in building functionality. {% endtrans %}
-          </p>
-          <p>
-            {% trans %}As a front end developer, I've designed with multiple responsive grid systems, Sass, jQuery, and front end frameworks. This site was designed on Drupal 8 using Bootstrap and Sass. Any design I build is fully responsive to work on any device.{% endtrans %}
-          </p>
-          <p>
-            {% trans %}As a back end developer, I've learned the best ways to use all of Drupal's APIs, from Entity API to Batch API, in versions 6, 7, and 8.{% endtrans %}
-          </p>
-        </div>
-        <div id="landing-bio-employee">
-
-        </div>
+        {{ block_summary_of_me }}
       </div>
     </div>
   </div>

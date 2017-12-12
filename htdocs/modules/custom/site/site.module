@@ -192,3 +192,20 @@ function site_form_views_exposed_form_alter(&$form, \Drupal\Core\Form\FormStateI
 function site_url($path) {
 
 }
+
+/**
+ * Build block content.
+ *
+ * @param $bid
+ *   Block ID.
+ * @return array
+ *   Block render array.
+ */
+function site_build_block_content($bid) {
+  $entity_type_manager = \Drupal::service('entity_type.manager');
+  $block_content_storage = $entity_type_manager->getStorage('block_content');
+  $block = $block_content_storage->load($bid);
+  $block_build = \Drupal::entityTypeManager()
+    ->getViewBuilder('block_content')->view($block);
+  return $block_build;
+}

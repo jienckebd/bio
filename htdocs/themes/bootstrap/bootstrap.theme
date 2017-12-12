@@ -226,6 +226,8 @@ function bootstrap_preprocess_footer(&$variables, $hook, $info) {
 
   $variables['menu'] = $menu_html;
 
+  $variables['year'] = date('Y');
+
 }
 
 function bootstrap_preprocess_landing(&$variables) {
@@ -291,6 +293,12 @@ function bootstrap_preprocess_landing(&$variables) {
 
   $variables['bio_summary'] = 'todo';
 
+  $variables['block_summary_of_me'] = site_build_block_content(1);
+
+}
+
+function bootstrap_preprocess_about(&$variables) {
+  $variables['block_summary_of_me'] = site_build_block_content(1);
 }
 
 function bootstrap_preprocess_node(&$variables) {

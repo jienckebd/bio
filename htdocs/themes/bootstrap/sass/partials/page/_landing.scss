@@ -1,111 +1,129 @@
-body.path-frontpage {
-
-  #landing-picture-bio {
-    background-color: $blue;
-    color: #FFFFFF;
-    padding: 50px 0px;
-    #landing-picture {
-      img {
-        @include border-radius(50%);
-        @include box-shadow(0 16px 20px -20px rgba(0, 0, 0, 0.9));
-        border: 10px solid #FFFFFF;
-        position: relative;
-        z-index: 1;
-        max-width: 100%;
-        height: auto;
-      }
-    }
-    #landing-bio-inner {
-      @include border-radius(3px);
+#landing-picture-bio {
+  background-color: $blue;
+  color: #FFFFFF;
+  padding: 50px 0px;
+  #landing-picture {
+    img {
+      @include border-radius(50%);
       @include box-shadow(0 16px 20px -20px rgba(0, 0, 0, 0.9));
-      background: #FFFFFF;
-      padding: 40px;
-      text-align: left;
-      color: #484848;
-      margin-left: -150px;
-      #landing-bio-employee {
-        text-align: center;
-        margin-top: 10px;
-      }
-    }
-  }
-
-  #landing-project {
-    clear: both;
-    background: #343434;
-    .cycle-slideshow {
+      border: 10px solid #FFFFFF;
       position: relative;
-      &:hover .cycle-slide .slide-caption {
-        @include opacity(1);
-        margin-left: 0px;
-      }
-      .cycle-slide {
-        width: 100%;
-        height: 500px;
-        background-attachment: fixed;
-        @include background-size(cover);
-        &::after {
-          background: url("/themes/bootstrap/img/pattern/footer_lodyas.png");
-          position: absolute;
-          top: 0;
-          left: 0;
-          right: 0;
-          bottom: 0;
-          content: "";
-          @include opacity(.8);
-        }
-        .slide-caption {
-          background: rgba(20, 20, 20, 0.7) none repeat scroll 0 0;
-          color: #ffffff;
-          @include opacity(0);
-          padding: 70px 60px 40px;
-          position: absolute;
-          text-align: center;
-          @include transition(all 0.5s ease 0s);
-          width: 700px;
-          z-index: 1;
-          bottom: 0;
-          top: 0;
-          width: 400px;
-          margin-left: -400px;
-          .slide-caption-body {
-            margin: 20px auto;
-          }
-          .slide-legal {
-            color: #DDDDDD;
-            font-size: 14px;
-          }
-          .slide-buttons {
-            margin-top: 20px;
-          }
-        }
-      }
-      .cycle-pager {
-        width: 100%;
-        text-align: right;
+      z-index: 1;
+      max-width: 100%;
+      height: auto;
+    }
+  }
+  #landing-bio-inner {
+    @include border-radius(3px);
+    @include box-shadow(0 16px 20px -20px rgba(0, 0, 0, 0.9));
+    background: #FFFFFF;
+    padding: 40px;
+    text-align: left;
+    color: #484848;
+  }
+}
+
+#landing-project {
+  clear: both;
+  background: #343434;
+  .cycle-slideshow {
+    position: relative;
+    &:hover .cycle-slide .slide-caption {
+      @include opacity(1);
+      margin-left: 0px;
+    }
+    .cycle-slide {
+      width: 100%;
+      height: 500px;
+      background-attachment: fixed;
+      @include background-size(cover);
+      &::after {
+        background: url("/themes/bootstrap/img/pattern/footer_lodyas.png");
         position: absolute;
-        bottom: -20px;
-        z-index: 995;
-        right: 30px;
-        span {
-          color: #FFFFFF;
-          font-size: 90px;
-          cursor: pointer;
-          &:hover, &.cycle-pager-active {
-            color: $blue;
-          }
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        content: "";
+        @include opacity(.8);
+      }
+      .slide-caption {
+        background: rgba(20, 20, 20, 0.7) none repeat scroll 0 0;
+        color: #ffffff;
+        @include opacity(0);
+        padding: 70px 60px 40px;
+        position: absolute;
+        text-align: center;
+        @include transition(all 0.5s ease 0s);
+        width: 700px;
+        z-index: 1;
+        bottom: 0;
+        top: 0;
+        width: 400px;
+        margin-left: -400px;
+        .slide-caption-body {
+          margin: 20px auto;
+        }
+        .slide-legal {
+          color: #DDDDDD;
+          font-size: 14px;
+        }
+        .slide-buttons {
+          margin-top: 20px;
+        }
+      }
+    }
+    .cycle-pager {
+      width: 100%;
+      text-align: right;
+      position: absolute;
+      bottom: -20px;
+      z-index: 995;
+      right: 30px;
+      span {
+        color: #FFFFFF;
+        font-size: 90px;
+        cursor: pointer;
+        &:hover, &.cycle-pager-active {
+          color: $blue;
         }
       }
     }
   }
+}
 
-  #landing-snippet {
-    clear: both;
-    padding: 90px 0px 60px;
-    background-color: #343434;
-    position: relative;
-    z-index: 1;
+#landing-snippet {
+  clear: both;
+  padding: 90px 0px 60px;
+  background-color: #343434;
+  position: relative;
+  z-index: 1;
+}
+
+#landing-picture-bio-inner {
+  position: relative;
+}
+
+#landing-picture {
+  position: absolute;
+  right: 0;
+  width: 220px;
+  top: -30px;
+
+  @media (max-width: 1024px) {
+    right: -30px;
+    width: 180px;
+    top: -30px;
   }
+
+  @media (max-width: 768px) {
+    display: none;
+  }
+}
+
+article#about {
+  margin-top: -20px;
+  padding-bottom: 40px;
 }
 
 /* Media Queries */

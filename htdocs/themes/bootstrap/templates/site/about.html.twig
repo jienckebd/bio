@@ -1,27 +1,18 @@
 <article id="about">
-  <div id="about-picture-bio-inner" class="container">
-    <div id="about-picture" class="col-md-6">
-      <div id="about-picture-inner">
-        <img src="/themes/bootstrap/img/me.jpg" class="image-circle-big" />
-      </div>
-    </div>
-    <div id="about-bio" class="col-md-6">
-      <div id="about-bio-inner">
-        <div id="about-bio-copy">
-          <p>
-            I'm a Drupal developer with experience in versions 6, 7, and 8 located in Massachusetts. I can work with both back end/functionality and front end/design, but most of my experience is in building functionality.
-          </p>
-          <p>
-            As a front end developer, I've designed with multiple responsive grid systems, Sass, jQuery, and front end frameworks. This site was designed on <a href="https://www.drupal.org/drupal-8.0">Drupal 8</a> using Bootstrap and Sass. Any design I build is fully responsive to work on any device.
-          </p>
-          <p>
-            As a back end developer, I've learned the best ways to use all of Drupal's APIs, from Entity API to Batch API, in versions 6, 7, and 8.
-          </p>
+
+  <section id="landing-picture-bio" class="row">
+    <div id="landing-picture-bio-inner" class="container">
+      <div id="landing-picture">
+        <div id="landing-picture-inner">
+          <img src="/themes/bootstrap/img/me.jpg" />
         </div>
-        <div id="about-bio-employee" class="text-center margin-top-20">
-          I'm currently an employee of <a href="http://beta.milespartnership.com/" target="_blank">Miles Marketing<br><img src="/themes/bootstrap/img/logo/miles.png"></a></div>
+      </div>
+      <div id="landing-bio">
+        <div id="landing-bio-inner">
+          {{ block_summary_of_me }}
         </div>
       </div>
     </div>
-  </div>
+  </section>
+
 </article>
