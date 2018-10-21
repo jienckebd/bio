@@ -1,0 +1,11 @@
+env:
+  matrix:
+  - JOB=job:check-coding-standards
+  - JOB=job:run-unit-tests
+  - JOB=job:run-behat-tests
+
+install:
+- composer --verbose install
+
+script:
+- echo "test2"
