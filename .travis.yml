@@ -1,0 +1,12 @@
+sudo: required
+
+language: ruby
+
+services:
+- docker
+
+install:
+- echo "test1"
+
+script:
+- echo "test2"
