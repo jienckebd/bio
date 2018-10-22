@@ -1,11 +1,12 @@
-env:
-  matrix:
-  - JOB=job:check-coding-standards
-  - JOB=job:run-unit-tests
-  - JOB=job:run-behat-tests
+sudo: required
+
+language: ruby
+
+services:
+- docker
 
 install:
-- composer --verbose install
+- echo "test1"
 
 script:
 - echo "test2"
