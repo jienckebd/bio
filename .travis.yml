@@ -9,4 +9,4 @@ install:
 - echo "test1"
 
 script:
-- echo "test2"
+- echo "test3"
